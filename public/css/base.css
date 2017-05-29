@@ -1,3 +1,29 @@
+body{
+  height: 100%auto;
+  width: auto;
+  background: radial-gradient(circle,green, yellow);
+}
+
 .game-box {
   text-align: center;
+}
+
+.game-form {
+  background-color: gray;
+  color: white;
+}
+
+.num-question {
+  background-color: blue;
+  color: white;
+}
+
+.select-difficulty {
+  background-color: red;
+  color: white;
+}
+
+.play-button {
+  background-color: green;
+  color: white;
 }
