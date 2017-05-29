@@ -38,7 +38,10 @@ var app = app || {};
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
     console.log(url);
     $.get(url).then((data) => {
-      console.log(data);
+      app.Question.loadAll(data.results);
+      app.Question.all.map((question) =>{
+        $('#theButton').parent().append(`<h1>${question.question}</h1>`);
+      })
     });
   }
 
