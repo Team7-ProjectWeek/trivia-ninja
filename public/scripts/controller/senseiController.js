@@ -5,7 +5,17 @@ var app = app || {};
 (function(module){
   const Sensei = {};
 
-  Sensei.tokenRequest = () => {
+  Sensei.hasValidToken = (ctx, next) => {
+    if(!app.user.token || app.user.token.expirationTime <= Math.floor((new Date()).getTime() / 1000)){
+      console.log('Getting token now');
+      app.Sensei.tokenRequest(next); 
+    }else{
+      next();
+    }
+    
+  }
+
+  Sensei.tokenRequest = (callback) => {
     $.get("https://opentdb.com/api_token.php?command=request")
     .then((data)=> {
       if(data.response_code === 0){
@@ -13,17 +23,25 @@ var app = app || {};
          data.expirationTime = data.issueTime + 21600; //21600 is 6 hours 
          console.log(data);
          app.user.token = data;
+         callback();
       }else{
         console.log("Invalid Token Request")
       }
+      
     },
     (err) =>{
       console.log(err);
     });
   }
 
+  Sensei.getQuestions = (ctx, next) => {
+    let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
+    console.log(url);
+    $.get(url).then((data) => {
+      console.log(data);
+    });
+  }
+
+
   module.Sensei = Sensei;
 })(app);
-
-
-app.Sensei.tokenRequest();

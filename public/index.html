@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
     <title>Trivia Ninja</title>
   </head>
   <body>
@@ -26,11 +26,14 @@
           <option> Medium </option>
           <option> Hard </option>
         </select>
-        <button name="playButton"> Play Now! </button>
+        <button id="playButton" name="playButton" href="/game"> Play Now! </button>
       </form>
+      <div><a id="theButton" href="/game/10/medium">Clicker meee</a></div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
     <script src="/scripts/model/user.js"></script>
     <script src="/scripts/controller/senseiController.js"></script>
+    <script src="/scripts/controller/routes.js"></script>
   </body>
 </html>
