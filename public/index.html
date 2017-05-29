@@ -3,14 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="css/base.css" />
     <title>Trivia Ninja</title>
   </head>
   <body>
     <header>
       <h1> Trivia Ninja! </h1>
+      <nav class="main-nav">
+        <div class="ham-menu"></div>
+        <ul>
+          <li> <a href="#"> About Team 7 </a> </li>
+      </nav>
     </header>
-    <main>
+    <main id="gameBox" class="game-box">
+      <h1> Ready to Train? </h1>
       <form id="mainGame">
         <label for="questions"> Select Number of Questions </label>
         <select name="numQuestions">
