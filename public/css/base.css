@@ -1,7 +1,11 @@
 body{
-  height: 100%auto;
+  height: 100%;
   width: auto;
   background: radial-gradient(circle,green, yellow);
+}
+
+label {
+  margin: 15px;
 }
 
 .game-box {
@@ -9,21 +13,34 @@ body{
 }
 
 .game-form {
+  text-align: center;
+  width:550px;
+  height: 200px;
   background-color: gray;
   color: white;
+  margin-left: 31.2%;
 }
 
 .num-question {
   background-color: blue;
   color: white;
+  margin-top: 15px;
+
 }
 
 .select-difficulty {
   background-color: red;
   color: white;
+
 }
 
 .play-button {
   background-color: green;
   color: white;
+  border-radius: 35%;
+  height: 40%;
+  width: 40%;
+  display: block;
+  margin-left: 30%;
+  margin-top: 50px;
 }
