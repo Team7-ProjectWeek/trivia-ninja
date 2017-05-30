@@ -13,6 +13,7 @@ var app = app || {};
     app.stat.questionStartTime = app.stat.time;
 
     $('#questionModal').append(app.Question.all[app.Question.currentQuestionIndex].toHtml());
+
     console.log(app.Question.currentQuestionIndex)
 
     $('.question-button').on('click', function (event) {
@@ -32,10 +33,7 @@ var app = app || {};
       app.Question.selectedAnswer = $(this).text();
 
     })
-
   }
 
   module.QuestionView = QuestionView;
 })(app);
-
-

@@ -12,26 +12,45 @@ var app = app || {};
     } else {
       next();
     }
-
   }
 
   Sensei.tokenRequest = (callback) => {
-    $.get("https://opentdb.com/api_token.php?command=request")
-      .then((data) => {
-        if (data.response_code === 0) {
-          data.issueTime = Math.floor(new Date().getTime() / 1000);
-          data.expirationTime = data.issueTime + 21600; //21600 is 6 hours 
-          console.log(data);
-          app.user.token = data;
-          callback();
-        } else {
-          console.log("Invalid Token Request")
-        }
+    $.get('https://opentdb.com/api_token.php?command=request')
+    .then((data) => {
+      if (data.response_code === 0) {
+        data.issueTime = Math.floor(new Date().getTime() / 1000);
+        data.expirationTime = data.issueTime + 21600; // 21600 is 6 hours
+        console.log(data);
+        app.user.token = data;
+        callback();
+      } else {
+        console.log('Invalid Token Request')
+      }
+    },
+    (err) => {
+      console.log(err);
+    });
 
-      },
-      (err) => {
-        console.log(err);
-      });
+  }
+  var x;
+  var y;
+//probably don't need these two
+  Sensei.getNumQuestions = () => {
+    return $('#numQuestions option:selected').text();
+  };
+
+  Sensei.getDifQuestions = () => {
+    return $('#difQuestions option:selected').text();
+  };
+
+  Sensei.replaceUrl = (x, y) => {
+    // both do the same thing
+    location.replace(`/game/${x}/${y}`);
+    // location.href = `/game/${x}/${y}`
+  }
+
+  Sensei.go = () => {
+    Sensei.replaceUrl(Sensei.getNumQuestions(), Sensei.getDifQuestions());
   }
 
   Sensei.getQuestions = (ctx, next) => {

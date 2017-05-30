@@ -1,0 +1,23 @@
+{
+  "name": "trivia-ninja",
+  "version": "1.0.0",
+  "description": "### Description Trivia ninja is a game to test your knowledge.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team7-ProjectWeek/trivia-ninja.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team7-ProjectWeek/trivia-ninja/issues"
+  },
+  "homepage": "https://github.com/Team7-ProjectWeek/trivia-ninja#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}

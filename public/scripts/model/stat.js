@@ -2,7 +2,7 @@
 
 var app = app || {};
 
-(function(module){
+(function (module) {
   const stat = {};
 
   let easy = 100, medium = 200, hard = 300;
@@ -55,7 +55,5 @@ var app = app || {};
     stat.score = (stat.numberOfCorrect * difficultyValue) - time;
   }
 
-
   module.stat = stat;
-
 })(app);

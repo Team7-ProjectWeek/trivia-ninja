@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/module.css"/>
-    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/base.css" />   
+    <link rel="stylesheet" href="/css/module.css"/>
+    <link rel="stylesheet" href="/css/layout.css" />
     <title>Trivia Ninja</title>
   </head>
   <body>
@@ -40,20 +40,20 @@
     </header>
     <main id="gameBox" class="game-box">
       <h1 class="main-header"> Ready to Train? </h1>
-      <form id="mainGame" class="game-form">
+      <form action="/game/10/medium" id="mainGame" class="game-form">
         <label for="questions"> Select Number of Questions </label>
-        <select name="numQuestions" class="num-question">
-          <option> 10 </option>
-          <option> 20 </option>
-          <option> 30 </option>
-          <option> 40 </option>
-          <option> 50 </option>
+        <select id="numQuestions" name="numQuestions" class="num-question">
+          <option>10</option>
+          <option>20</option>
+          <option>30</option>
+          <option>40</option>
+          <option>50</option>
         </select>
         <label for="difficulty level"> Choose Your Difficulty </label>
-        <select name="difficulty" class="select-difficulty">
-          <option> Easy </option>
-          <option> Medium </option>
-          <option> Hard </option>
+        <select id="difQuestions" name="difficulty" class="select-difficulty">
+          <option>easy</option>
+          <option>medium</option>
+          <option>hard</option>
         </select>
         <button id="playButton" name="playButton" href="/game" class="play-button"> Play Now! </button>
       </form>
@@ -89,13 +89,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script src="scripts/model/question.js"></script>
-    <script src="scripts/model/user.js"></script>
-    <script src="scripts/controller/senseiController.js"></script>
-    <script src="scripts/view/questionView.js"></script>
-    <script src="scripts/controller/aboutController.js"></script>
-    <script src="scripts/model/stat.js"></script>
-    <script src="scripts/controller/eventHandler.js"></script>
-    <script src="scripts/controller/routes.js"></script>
+    <script src="/scripts/model/question.js"></script>
+    <script src="/scripts/model/user.js"></script>
+    <script src="/scripts/controller/senseiController.js"></script>
+    <script src="/scripts/view/questionView.js"></script>
+    <script src="/scripts/controller/aboutController.js"></script>
+    <script src="/scripts/model/stat.js"></script>
+    <script src="/scripts/controller/eventHandler.js"></script>
+    <script src="/scripts/controller/routes.js"></script>
   </body>
 </html>
