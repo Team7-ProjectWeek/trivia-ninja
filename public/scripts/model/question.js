@@ -38,6 +38,7 @@ var app = app || {};
 
   Question.all = [];
   Question.currentQuestionIndex = 0;
+  Question.selectedAnswer = "";
 
   Question.loadAll = (rawQuestions) => {
     Question.all = rawQuestions.map(ele => new Question(ele));

@@ -45,7 +45,21 @@ var app = app || {};
     });
   }
 
+  Sensei.evaluateAnswer = () =>{
+    console.log(app.Question.selectedAnswer+ " === " +app.Question.all[app.Question.currentQuestionIndex].correct_answer)
+    if(app.Question.selectedAnswer === app.Question.all[app.Question.currentQuestionIndex].correct_answer){
+      
+      console.log("Answer is Correct");
+      app.stat.numberOfCorrect +=1;
+      let timeTaken = app.stat.time - app.stat.questionStartTime;
 
+      console.log(app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken));
+      
+    }else{
+      console.log("Answer is Wrong");
+    }
+      
+  }
 
   module.Sensei = Sensei;
 })(app);
