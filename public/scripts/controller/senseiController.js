@@ -39,9 +39,11 @@ var app = app || {};
     console.log(url);
     $.get(url).then((data) => {
       app.Question.loadAll(data.results);
-      app.Question.all.map((question) =>{
-        $('#theButton').parent().append(`<h1>${question.question}</h1>`);
-      })
+      // app.Question.all.map((question) =>{
+      //   $('#theButton').parent().append(`<h1>${question.question}</h1>`);
+      // })
+
+      app.QuestionView.serveQuestion();
     });
   }
 
