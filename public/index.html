@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/module.css"/>
+
     <title>Trivia Ninja</title>
   </head>
   <body>
@@ -18,7 +21,8 @@
 
       <script id="questionTemplate" type="text/x-handlebars-template">
         <div class="question-container">
-          <div><h1>{{{question}}}</h1></div>
+          <div class="question-header">{{{question}}}</div>
+          <div class="option-container">
             {{#if isMultiple}}
               <div class="option">{{{option1}}}</div>
               <div class="option">{{{option2}}}</div>
@@ -28,7 +32,9 @@
               <div class="option">{{{option1}}}</div>
               <div class="option">{{{option2}}}</div>
             {{/if}}
-          <button class="question-button">NEXT</button>
+          </div>
+
+          <div class="question-button">NEXT</div>
         </div>
       </script>
     </header>
@@ -54,8 +60,8 @@
       <div><a id="theButton" href="/game/10/medium">Clicker meee</a></div>
       <div id="questionModal">
         <div class="stats-container">
-          <div class="stats-timer"></div>
-          <div class="stats-score"></div>
+          <div class="stats-timer">TIME: 0</div>
+          <div class="stats-score">SCORE: 0</div>
         </div>
       </div>
     </main>
@@ -66,7 +72,8 @@
     <script src="scripts/model/user.js"></script>
     <script src="scripts/controller/senseiController.js"></script>
     <script src="scripts/view/questionView.js"></script>
-    <script src="scripts/controller/routes.js"></script>
     <script src="scripts/model/stat.js"></script>
+    <script src="scripts/controller/eventHandler.js"></script>
+    <script src="scripts/controller/routes.js"></script>
   </body>
 </html>
