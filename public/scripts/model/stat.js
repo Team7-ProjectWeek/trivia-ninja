@@ -17,7 +17,7 @@ var app = app || {};
 
   stat.countTime = function () {
     time = time + 1;
-    console.log(time);
+    $('.stats-timer').html(`Time: ${time}`);
   }
 
   stat.stopTime = function () {
