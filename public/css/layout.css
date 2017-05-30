@@ -1,13 +1,18 @@
 
-.about-team img {
-  width: 150px;
-  height: auto;
-}
-
-
-
 @media only screen and (min-width: 420px) {
   /*page break for tablets*/
+
+  .nicu-pic{
+    float: left;
+  }
+
+  .mport-pic {
+    float: right;
+  }
+
+  .dev-pic{
+    float: left;
+  }
 
 }
 
