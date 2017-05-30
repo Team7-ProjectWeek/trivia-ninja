@@ -1,6 +1,11 @@
+*{
+  box-sizing: border-box;
+}
+
 body{
   height: 100%;
   width: auto;
+  font-family: 'Raleway', sans-serif;
   background: radial-gradient(circle,green, yellow);
 }
 
@@ -12,39 +17,3 @@ label {
   display: none;
 }
 
-.game-box {
-  text-align: center;
-}
-
-.game-form {
-  text-align: center;
-  width:550px;
-  height: 200px;
-  background-color: gray;
-  color: white;
-  margin-left: 31.2%;
-}
-
-.num-question {
-  background-color: blue;
-  color: white;
-  margin-top: 15px;
-
-}
-
-.select-difficulty {
-  background-color: red;
-  color: white;
-
-}
-
-.play-button {
-  background-color: green;
-  color: white;
-  border-radius: 35%;
-  height: 40%;
-  width: 40%;
-  display: block;
-  margin-left: 30%;
-  margin-top: 50px;
-}
