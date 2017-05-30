@@ -12,3 +12,8 @@ body{
 label {
   margin: 15px;
 }
+
+.about-team{
+  display: none;
+}
+
