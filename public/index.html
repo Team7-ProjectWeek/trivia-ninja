@@ -20,13 +20,13 @@
         <div class="question-container">
           <div><h1>{{{question}}}</h1></div>
             {{#if isMultiple}}
-              <div>{{{option1}}}</div>
-              <div>{{{option2}}}</div>
-              <div>{{{option3}}}</div>
-              <div>{{{option4}}}</div>
+              <div class="option">{{{option1}}}</div>
+              <div class="option">{{{option2}}}</div>
+              <div class="option">{{{option3}}}</div>
+              <div class="option">{{{option4}}}</div>
             {{else}}
-              <div>{{{option1}}}</div>
-              <div>{{{option2}}}</div>
+              <div class="option">{{{option1}}}</div>
+              <div class="option">{{{option2}}}</div>
             {{/if}}
           <button class="question-button">NEXT</button>
         </div>
@@ -52,7 +52,12 @@
         <button id="playButton" name="playButton" href="/game" class="play-button"> Play Now! </button>
       </form>
       <div><a id="theButton" href="/game/10/medium">Clicker meee</a></div>
-      <div id="questionModal"></div>
+      <div id="questionModal">
+        <div class="stats-container">
+          <div class="stats-timer"></div>
+          <div class="stats-score"></div>
+        </div>
+      </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>

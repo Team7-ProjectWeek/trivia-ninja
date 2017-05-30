@@ -37,14 +37,19 @@ var app = app || {};
   Sensei.getQuestions = (ctx, next) => {
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
     console.log(url);
+    app.Question.currentQuestionIndex = 0;
     $.get(url).then((data) => {
       app.Question.loadAll(data.results);
       // app.Question.all.map((question) =>{
       //   $('#theButton').parent().append(`<h1>${question.question}</h1>`);
       // })
-
+      app.stat.timeInit();
       app.QuestionView.serveQuestion();
     });
+
+    Sensei.nextQuestion = (ctx, next) => {
+
+    }
   }
 
 
