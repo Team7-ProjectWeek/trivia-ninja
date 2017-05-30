@@ -2,11 +2,10 @@
 
 var app = app || {};
 
-(function(module){
-
+(function (module) {
   const aboutController = {};
 
-  aboutController.init = function() {
+  aboutController.init = function () {
     $('.main-header').hide();
     $('#mainGame').hide();
 
