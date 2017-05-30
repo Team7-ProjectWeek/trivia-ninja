@@ -4,14 +4,14 @@ var app = app || {};
 
 (function(module){
 
-  const about = {};
+  const aboutController = {};
 
-  about.init = function() {
+  aboutController.init = function() {
     $('.main-header').hide();
     $('#mainGame').hide();
 
     $('#about').fadeIn(4500);
   }
 
-  module.about = about;
+  module.aboutController = aboutController;
 })(app);
