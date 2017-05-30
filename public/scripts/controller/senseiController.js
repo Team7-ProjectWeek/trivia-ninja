@@ -30,6 +30,7 @@ var app = app || {};
     (err) => {
       console.log(err);
     });
+
   }
   var x;
   var y;
@@ -58,16 +59,25 @@ var app = app || {};
     app.Question.currentQuestionIndex = 0;
     $.get(url).then((data) => {
       app.Question.loadAll(data.results);
-      // app.Question.all.map((question) =>{
-      //   $('#theButton').parent().append(`<h1>${question.question}</h1>`);
-      // })
       app.stat.timeInit();
       app.QuestionView.serveQuestion();
     });
+  }
 
-    Sensei.nextQuestion = (ctx, next) => {
+  Sensei.evaluateAnswer = () =>{
+    console.log(app.Question.selectedAnswer+ " === " +app.Question.all[app.Question.currentQuestionIndex].correct_answer)
+    if(app.Question.selectedAnswer === app.Question.all[app.Question.currentQuestionIndex].correct_answer){
+      
+      console.log("Answer is Correct");
+      app.stat.numberOfCorrect +=1;
+      let timeTaken = app.stat.time - app.stat.questionStartTime;
 
+      console.log(app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken));
+      
+    }else{
+      console.log("Answer is Wrong");
     }
+      
   }
 
   module.Sensei = Sensei;
