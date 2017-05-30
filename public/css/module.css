@@ -47,7 +47,7 @@
 }
 
 .question-header {
-  text-align: center;  
+  text-align: center;
   font-size: 1.5em;
   padding: 4px;
 }
@@ -101,4 +101,29 @@
 
 .question-selected {
   background-color: pink;
+}
+
+
+/*About Team 7 Region*/
+
+.about-team {
+  align-items: center;
+}
+
+.about-team img {
+  width: 150px;
+  height: auto;
+}
+
+.bio-text {
+  width: 80%;
+}
+
+.nicu {
+  margin-bottom: 5em;
+}
+
+.mport {
+  margin-top: 8em;
+  margin-bottom: 8em;
 }
