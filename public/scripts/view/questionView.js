@@ -2,7 +2,7 @@
 
 var app = app || {};
 
-(function(module){
+(function (module) {
   const QuestionView = {};
 
   QuestionView.serveQuestion = () => {
@@ -10,24 +10,29 @@ var app = app || {};
     $('#mainGame').hide();
     $('.question-container').empty();
     $('.stats-container').show();
+    app.stat.questionStartTime = app.stat.time;
+
     $('#questionModal').append(app.Question.all[app.Question.currentQuestionIndex].toHtml());
-    
-    $('.question-button').on('click', function (event){
-      console.log('question button clicked');
+    console.log(app.Question.currentQuestionIndex)
+
+    $('.question-button').on('click', function (event) {
+      app.Sensei.evaluateAnswer();
+
+      if (app.Question.currentQuestionIndex < app.Question.all.length - 1)
+        app.Question.currentQuestionIndex += 1;
+      else
+        $('.question-button').html('DONE');
+      
       app.QuestionView.serveQuestion();
     });
 
-    $('.option').on('click', function(event){
+    $('.option').on('click', function (event) {
       $(this).siblings().removeClass('question-selected');
       $(this).toggleClass('question-selected');
-      console.log(`Selected Answer: ${$(this).text()}`);
+      app.Question.selectedAnswer = $(this).text();
+
     })
 
-    console.log(app.Question.currentQuestionIndex)
-    if(app.Question.currentQuestionIndex < app.Question.all.length-1)
-      app.Question.currentQuestionIndex += 1;
-    else
-      $('.question-button').html('DONE');
   }
 
   module.QuestionView = QuestionView;
