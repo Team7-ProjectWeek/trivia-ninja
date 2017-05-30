@@ -20,7 +20,18 @@ var app = app || {};
 
   stat.countTimeTotalScore = function () {
     stat.time += 1;
-    stat.score -= 1;
+
+    switch(app.Question.all[app.Question.currentQuestionIndex].difficulty){
+      case "easy":
+        stat.score -= 1;
+        break;
+      case "medium":
+        stat.score -= 2;
+        break;
+      case "hard":
+        stat.score -= 3;
+        break;
+    }
     $('.stats-timer').html(`Time: ${stat.time}`);
     $('.stats-score').html(`Score: ${stat.score}`);
   }
