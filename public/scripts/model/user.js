@@ -2,9 +2,7 @@
 
 var app = app || {};
 
-(function(module){
+(function (module) {
   const user = {};
-  
   module.user = user;
-
 })(app);

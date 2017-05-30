@@ -2,18 +2,14 @@
 
 var app = app || {};
 
-(function(module){
+(function (module) {
   const stat = {};
-
-
 
   let easy = 100, medium = 200, hard = 300;
   let time = 0;
   stat.timeInit = function () {
-
     var timer = setInterval(stat.countTime, 1000);
   }
-
 
   stat.countTime = function () {
     time = time + 1;
@@ -28,7 +24,5 @@ var app = app || {};
     return numCorrect * difficulty - time;
   }
 
-
   module.stat = stat;
-
 })(app);

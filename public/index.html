@@ -34,20 +34,20 @@
     </header>
     <main id="gameBox" class="game-box">
       <h1 class="main-header"> Ready to Train? </h1>
-      <form id="mainGame" class="game-form">
+      <form action="/game/10/medium" id="mainGame" class="game-form">
         <label for="questions"> Select Number of Questions </label>
-        <select name="numQuestions" class="num-question">
-          <option> 10 </option>
-          <option> 20 </option>
-          <option> 30 </option>
-          <option> 40 </option>
-          <option> 50 </option>
+        <select id="numQuestions" name="numQuestions" class="num-question">
+          <option>10</option>
+          <option>20</option>
+          <option>30</option>
+          <option>40</option>
+          <option>50</option>
         </select>
         <label for="difficulty level"> Choose Your Difficulty </label>
-        <select name="difficulty" class="select-difficulty">
-          <option> Easy </option>
-          <option> Medium </option>
-          <option> Hard </option>
+        <select id="difQuestions" name="difficulty" class="select-difficulty">
+          <option>easy</option>
+          <option>medium</option>
+          <option>hard</option>
         </select>
         <button id="playButton" name="playButton" href="/game" class="play-button"> Play Now! </button>
       </form>
@@ -64,9 +64,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="scripts/model/question.js"></script>
     <script src="scripts/model/user.js"></script>
+    <script src="scripts/model/stat.js"></script>
     <script src="scripts/controller/senseiController.js"></script>
     <script src="scripts/view/questionView.js"></script>
     <script src="scripts/controller/routes.js"></script>
-    <script src="scripts/model/stat.js"></script>
+
   </body>
 </html>
