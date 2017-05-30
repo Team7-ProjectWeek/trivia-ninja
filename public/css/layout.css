@@ -1,6 +1,7 @@
 
 @media only screen and (min-width: 420px) {
   /*page break for tablets*/
+
   .nicu-pic{
     float: left;
   }
@@ -12,8 +13,12 @@
   .dev-pic{
     float: left;
   }
+
 }
 
 @media only screen and (min-width: 768px) {
   /*page break for desktops*/
+    .option {
+    width: 40%;
+  }
 }
