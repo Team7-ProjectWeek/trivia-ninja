@@ -43,6 +43,7 @@ var app = app || {};
   };
 
   Sensei.replaceUrl = (x, y) => {
+    // both do the same thing
     location.replace(`/game/${x}/${y}`);
     // location.href = `/game/${x}/${y}`
   }
