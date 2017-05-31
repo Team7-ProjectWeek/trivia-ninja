@@ -7,7 +7,7 @@ var app = app || {};
 
   // get number of questions and answers.
 
-
+  // what is this controller for?
 
   module.statsController = statsController;
 })(app);

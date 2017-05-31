@@ -23,7 +23,7 @@ var app = app || {};
         app.Question.currentQuestionIndex += 1;
       else
         $('.question-button').html('DONE');
-      
+
       app.QuestionView.serveQuestion();
     });
 
@@ -31,7 +31,6 @@ var app = app || {};
       $(this).siblings().removeClass('question-selected');
       $(this).toggleClass('question-selected');
       app.Question.selectedAnswer = $(this).text();
-
     })
   }
 

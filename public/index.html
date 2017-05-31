@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/base.css" />   
+    <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/module.css"/>
     <link rel="stylesheet" href="/css/layout.css" />
     <title>Trivia Ninja</title>
@@ -18,7 +18,6 @@
         <ul>
           <li> <a href="/about"> About Team 7 </a> </li>
       </nav>
-
       <script id="questionTemplate" type="text/x-handlebars-template">
         <div class="question-container">
           <div class="question-header">{{{question}}}</div>
@@ -42,7 +41,7 @@
       <h1 class="main-header"> Ready to Train? </h1>
       <form action="/game/10/medium" id="mainGame" class="game-form">
         <label for="questions"> Select Number of Questions </label>
-        <select id="numQuestions" name="numQuestions" class="num-question">
+        <select id="numQuestions" class="num-question">
           <option>10</option>
           <option>20</option>
           <option>30</option>
@@ -50,12 +49,12 @@
           <option>50</option>
         </select>
         <label for="difficulty level"> Choose Your Difficulty </label>
-        <select id="difQuestions" name="difficulty" class="select-difficulty">
+        <select id="difQuestions" class="select-difficulty">
           <option>easy</option>
           <option>medium</option>
           <option>hard</option>
         </select>
-        <button id="playButton" name="playButton" href="/game" class="play-button"> Play Now! </button>
+        <button id="playButton" class="play-button"> Play Now! </button>
       </form>
       <div><a id="theButton" href="/game/10/medium">Clicker meee</a></div>
       <div id="questionModal">
