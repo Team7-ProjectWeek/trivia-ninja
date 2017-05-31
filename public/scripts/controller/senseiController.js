@@ -44,7 +44,7 @@ var app = app || {};
     location.replace(`/game/${numQuestions}/${difQuestions}`);
   }
   $('#playButton').on('click', function (event) {
-    event.preventDefault;
+    event.preventDefault();
     Sensei.go();
   })
 

@@ -39,7 +39,7 @@
   </header>
   <main id="gameBox" class="game-box">
     <h1 class="main-header"> Ready to Train? </h1>
-    <form action="/game/10/medium" id="mainGame" class="game-form">
+    <form id="mainGame" class="game-form">
       <label for="questions"> Select Number of Questions </label>
       <select id="numQuestions" class="num-question">
           <option>10</option>
@@ -56,7 +56,6 @@
         </select>
         <button id="playButton" class="play-button"> Play Now! </button>
       </form>
-      <div><a id="theButton" href="/game/10/medium">Clicker meee</a></div>
       <div id="questionModal">
         <div class="stats-container">
           <div class="stats-timer">TIME: 0</div>
@@ -119,7 +118,7 @@
       <div class="final-header">Congrats you completed it!</div>
       <div class="final-score">FINAL SCORE: 000</div>
       <div class="final-time">TIME: 00:00</div>
-      <div class="play-again-button">PLAY AGAIN?</div>
+      <div class="play-again-button"><a href="/" >PLAY AGAIN?</a></div>
     </section>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
