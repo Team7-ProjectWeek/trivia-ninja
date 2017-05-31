@@ -3,6 +3,10 @@
 var app = app || {};
 
 (function (module) {
+  function htmlDecoder(value) {
+    return $('.question-selected').html(value).text();
+  }
+
   const Sensei = {};
 
   Sensei.hasValidToken = (ctx, next) => {
@@ -76,8 +80,8 @@ var app = app || {};
   }
 
   Sensei.evaluateAnswer = () => {
-    console.log(app.Question.selectedAnswer + ' === ' + app.Question.all[app.Question.currentQuestionIndex].correct_answer)
-    if (app.Question.selectedAnswer === app.Question.all[app.Question.currentQuestionIndex].correct_answer) {
+    console.log(app.Question.selectedAnswer + ' === ' + htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer))
+    if (app.Question.selectedAnswer === htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer)) {
       console.log('Answer is Correct');
       app.stat.numberOfCorrect +=1;
       let timeTaken = app.stat.time - app.stat.questionStartTime;
