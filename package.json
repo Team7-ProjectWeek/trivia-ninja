@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Team7-ProjectWeek/trivia-ninja#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "pg": "^6.2.3"
   }
 }
