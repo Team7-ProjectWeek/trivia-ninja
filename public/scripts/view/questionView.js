@@ -16,20 +16,20 @@ var app = app || {};
 
     console.log(app.Question.currentQuestionIndex)
 
-
     $('.question-button').on('click', function () {
-
       if ($('.question-button').text() === 'DONE') {
-        console.log("In Done Eval");
+        console.log('In Done Eval');
         app.statsController.completeGame();
       } else {
-        if (app.Question.currentQuestionIndex < app.Question.all.length - 1) {
+        if (app.Question.currentQuestionIndex < app.Question.all.length - 2) {
           app.Sensei.evaluateAnswer();
           app.Question.currentQuestionIndex += 1;
           app.QuestionView.serveQuestion();
-        }
-        else {
-          console.log("in changing done");
+        } else {
+          console.log('in changing done');
+          app.Sensei.evaluateAnswer();
+          app.Question.currentQuestionIndex += 1;
+          app.QuestionView.serveQuestion();
           $('.question-button').html('DONE');
         }
       }
