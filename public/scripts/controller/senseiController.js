@@ -43,18 +43,29 @@ var app = app || {};
   Sensei.replaceUrl = (numQuestions, difQuestions) => {
     location.replace(`/game/${numQuestions}/${difQuestions}`);
   }
-  $('#playButton').on('click', function (event) {
-    event.preventDefault();
-    Sensei.go();
-  })
-
 
   Sensei.go = () => {
     Sensei.replaceUrl(Sensei.getNumQuestions(), Sensei.getDifQuestions());
   }
 
+  $('#playButton').on('click', function (event) {
+    event.preventDefault();
+    Sensei.go();
+  })
+
   Sensei.getQuestions = (ctx, next) => {
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
+    console.log(url);
+    app.Question.currentQuestionIndex = 0;
+    $.get(url).then((data) => {
+      app.Question.loadAll(data.results);
+      app.stat.timeInit();
+      app.QuestionView.serveQuestion();
+    });
+  }
+
+  Sensei.freeQuestions = (ctx, next) => {
+    let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
     console.log(url);
     app.Question.currentQuestionIndex = 0;
     $.get(url).then((data) => {

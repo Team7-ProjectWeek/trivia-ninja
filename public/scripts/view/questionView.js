@@ -35,6 +35,23 @@ var app = app || {};
       }
     });
 
+    // change the .question-button class to freeplay button
+    // make the opposite happen when click play button
+    $('.freeplay-button').on('click', function () {
+        if (app.Question.currentQuestionIndex < app.Question.all.length - 2) {
+          app.Sensei.evaluateAnswer();
+          app.Question.currentQuestionIndex += 1;
+          app.QuestionView.serveQuestion();
+        } else {
+          console.log('in changing done');
+          app.Sensei.evaluateAnswer();
+          app.Question.currentQuestionIndex += 1;
+          app.QuestionView.serveQuestion();
+          // get the next request but don't reset points and time
+          // also ideally this would have a done button, where you can tally your points
+      }
+    });
+
     $('.option').on('click', function (event) {
       $(this).siblings().removeClass('question-selected');
       $(this).toggleClass('question-selected');
