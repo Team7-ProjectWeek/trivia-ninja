@@ -9,9 +9,9 @@ var app = app || {};
     $('.main-header').hide();
     $('#mainGame').hide();
     $('.question-container').empty();
-    $('.stats-container').show();
+    $('.stats-container').css('display','flex');
     app.stat.questionStartTime = app.stat.time;
-
+    app.statView.updateStats();
     $('#questionModal').append(app.Question.all[app.Question.currentQuestionIndex].toHtml());
 
     console.log(app.Question.currentQuestionIndex)

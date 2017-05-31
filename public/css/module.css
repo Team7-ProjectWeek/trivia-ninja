@@ -1,8 +1,10 @@
 /*Homepage Region*/
 .game-box {
-  text-align: center;
 }
 
+.main-header{
+  text-align: center;
+}
 .game-form {
   text-align: center;
   width:550px;
@@ -81,22 +83,18 @@
 
 
 .stats-container {
+  font-family: 'Raleway', sans-serif;
   display: none;
+  text-align: center;
   background-color: pink;
   margin:auto;
   width: 80%;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 600;
 }
 
-.stats-timer{
-  display:inline;
-  text-align: left;
-}
-
-.stats-score{
-  display:inline;
-  float:right;
+.stats-container div{
+  width:25%;
 }
 
 .question-selected {
