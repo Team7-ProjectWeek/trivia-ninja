@@ -57,11 +57,12 @@
         </select>
         <button id="playButton" class="play-button"> Play Now! </button>
       </form>
-      <div id="questionModal">
-        <div class="stats-container">
-          <div class="stats-timer">TIME: 0</div>
-          <div class="stats-score">SCORE: 0</div>
-        </div>
+    <div id="questionModal">
+      <div class="stats-container">
+        <div class="stats-timer">TIME: 0</div>
+        <div class="stats-score">TOTAL SCORE: 0</div>
+        <div class="stats-correct-answers">CORRECT ANSWERS: 0</div>
+        <div class="stats-progress"> Question: 0/0</div>
       </div>
     </div>
     <div class="decoder"> </div>
@@ -118,6 +119,11 @@
     </section>
     <section class="trivia-complete-container">
       <div class="final-header">Congrats you completed it!</div>
+      <form id="finalForm">
+        <label for="initials">3 Character Initial: <label>
+        <input id="initials" type="text" placeholder="MDN" maxlength="3"/>
+        <div class="save-score-button">SAVE SCORE</div>
+      </form>
       <div class="final-score">FINAL SCORE: 000</div>
       <div class="final-time">TIME: 00:00</div>
       <div class="play-again-button"><a href="/" >PLAY AGAIN?</a></div>

@@ -98,11 +98,12 @@ var app = app || {};
       // console.log('Answer is Correct');
       app.stat.numberOfCorrect +=1;
       let timeTaken = app.stat.time - app.stat.questionStartTime;
+      console.log(app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken));
 
-      // console.log(app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken));
     } else {
       // console.log("Answer is Wrong");
     }
+    app.statView.updateStats();
   }
 
 
