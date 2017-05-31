@@ -127,3 +127,39 @@
   margin-top: 8em;
   margin-bottom: 8em;
 }
+
+/*Trivia Complete Region*/
+.trivia-complete-container{
+  display:none;
+  width:80%;
+  margin:auto;
+  background-color: grey;
+  color:white;
+}
+
+.final-header{
+  font-size: 2em;
+  text-align: center;
+}
+
+.final-score{
+  margin-top: 3%;
+  font-size: 1.6em;
+  font-weight: 600;
+  padding: 2%;
+}
+
+.final-time{
+  font-size: 1.6em;
+  font-weight: 600;
+  padding: 2%;
+}
+
+.play-again-button{
+  float:right;
+  margin-top: 2%;
+  padding: 1%;
+  background-color: pink;
+  font-size: 2em;
+  font-weight: 700;
+}

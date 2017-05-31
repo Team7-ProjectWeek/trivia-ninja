@@ -7,14 +7,14 @@ var app = app || {};
 
   let easy = 100, medium = 200, hard = 300;
   let difficultyValue = 0;
-  let timer;
+  stat.timer;
   stat.numberOfCorrect = 0;
   stat.score = 0;
   stat.questionStartTime = 0;
   stat.time = 0;
 
   stat.timeInit = function () {
-    timer = setInterval(stat.countTimeTotalScore, 1000);
+     stat.timer = setInterval(stat.countTimeTotalScore, 1000);
   }
 
   stat.countTimeTotalScore = function () {
@@ -36,7 +36,7 @@ var app = app || {};
   }
 
   stat.stopTime = function () {
-    clearInterval(stat.time);
+    clearInterval(stat.timer);
   }
 
   stat.statCalculator = function (difficulty, time) {
