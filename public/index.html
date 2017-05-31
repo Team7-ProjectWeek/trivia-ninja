@@ -1,101 +1,142 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/base.css" />   
-    <link rel="stylesheet" href="/css/module.css"/>
-    <link rel="stylesheet" href="/css/layout.css" />
-    <title>Trivia Ninja</title>
-  </head>
-  <body>
-    <header>
-      <h1> Trivia Ninja! </h1>
-      <nav class="main-nav">
-        <div class="ham-menu"></div>
-        <ul>
-          <li> <a href="/about"> About Team 7 </a> </li>
-      </nav>
 
-      <script id="questionTemplate" type="text/x-handlebars-template">
-        <div class="question-container">
-          <div class="question-header">{{{question}}}</div>
-          <div class="option-container">
-            {{#if isMultiple}}
-              <div class="option">{{{option1}}}</div>
-              <div class="option">{{{option2}}}</div>
-              <div class="option">{{{option3}}}</div>
-              <div class="option">{{{option4}}}</div>
-            {{else}}
-              <div class="option">{{{option1}}}</div>
-              <div class="option">{{{option2}}}</div>
-            {{/if}}
-          </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/module.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <title>Trivia Ninja</title>
+</head>
 
-          <div class="question-button">NEXT</div>
+<body>
+  <header>
+    <h1> Trivia Ninja! </h1>
+    <nav class="main-nav">
+      <div class="ham-menu"></div>
+      <ul>
+        <li> <a href="/about"> About Team 7 </a> </li>
+    </nav>
+
+    <script id="questionTemplate" type="text/x-handlebars-template">
+      <div class="question-container">
+        <div class="question-header">{{{question}}}</div>
+        <div class="option-container">
+          {{#if isMultiple}}
+          <div class="option">{{{option1}}}</div>
+          <div class="option">{{{option2}}}</div>
+          <div class="option">{{{option3}}}</div>
+          <div class="option">{{{option4}}}</div>
+          {{else}}
+          <div class="option">{{{option1}}}</div>
+          <div class="option">{{{option2}}}</div>
+          {{/if}}
         </div>
-      </script>
-    </header>
-    <main id="gameBox" class="game-box">
-      <h1 class="main-header"> Ready to Train? </h1>
-      <form action="/game/10/medium" id="mainGame" class="game-form">
-        <label for="questions"> Select Number of Questions </label>
-        <select id="numQuestions" name="numQuestions" class="num-question">
+
+        <div class="question-button">NEXT</div>
+      </div>
+    </script>
+  </header>
+  <main id="gameBox" class="game-box">
+    <h1 class="main-header"> Ready to Train? </h1>
+    <form action="/game/10/medium" id="mainGame" class="game-form">
+      <label for="questions"> Select Number of Questions </label>
+      <select id="numQuestions" name="numQuestions" class="num-question">
           <option>10</option>
           <option>20</option>
           <option>30</option>
           <option>40</option>
           <option>50</option>
         </select>
-        <label for="difficulty level"> Choose Your Difficulty </label>
-        <select id="difQuestions" name="difficulty" class="select-difficulty">
+      <label for="difficulty level"> Choose Your Difficulty </label>
+      <select id="difQuestions" name="difficulty" class="select-difficulty">
           <option>easy</option>
           <option>medium</option>
           <option>hard</option>
         </select>
-        <button id="playButton" name="playButton" href="/game" class="play-button"> Play Now! </button>
-      </form>
-      <div><a id="theButton" href="/game/10/medium">Clicker meee</a></div>
-      <div id="questionModal">
-        <div class="stats-container">
-          <div class="stats-timer">TIME: 0</div>
-          <div class="stats-score">SCORE: 0</div>
+      <button id="playButton" name="playButton" href="/game" class="play-button"> Play Now! </button>
+    </form>
+    <div><a id="theButton" href="/game/10/medium">Clicker meee</a></div>
+    <div id="questionModal">
+      <div class="stats-container">
+        <div class="stats-timer">TIME: 0</div>
+        <div class="stats-score">SCORE: 0</div>
+      </div>
+    </div>
+    <section id="about" class="about-team">
+      <h1>Team 7</h1>
+      <div class="nicu">
+        <img src="imgs/ninja.jpg" class="nicu-pic" />
+        <div class="bio-text">
+          Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+          magna aliquam erat volutpat. Ut ninja wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+          lobortis nisl ut aliquip ex ea commodo consequat. Duis ninja autem vel eum iriure dolor in hendrerit in vulputate
+          velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio
+          dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam ninja ipsum
+          liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim
+          assum. Typi ninja non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes
+          ninja demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas ninja est etiam processus dynamicus,
+          qui sequitur mutationem consuetudium lectorum. Mirum ninja est notare quam littera gothica, quam nunc putamus parum
+          claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem ninja ipsum
+          modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
         </div>
       </div>
-      <section id="about" class="about-team">
-        <h1>Team 7</h1>
-        <div class="nicu">
-          <img src="imgs/ninja.jpg" class="nicu-pic" />
-          <div class="bio-text">
-            Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut ninja wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis ninja autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam ninja ipsum liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi ninja non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes ninja demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas ninja est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum ninja est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem ninja ipsum modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-          </div>
+      <div class="mport">
+        <img src="imgs/ninja.jpg" class="mport-pic" />
+        <div class="bio-text">
+          Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+          magna aliquam erat volutpat. Ut ninja wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+          lobortis nisl ut aliquip ex ea commodo consequat. Duis ninja autem vel eum iriure dolor in hendrerit in vulputate
+          velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio
+          dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam ninja ipsum
+          liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim
+          assum. Typi ninja non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes
+          ninja demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas ninja est etiam processus dynamicus,
+          qui sequitur mutationem consuetudium lectorum. Mirum ninja est notare quam littera gothica, quam nunc putamus parum
+          claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem ninja ipsum
+          modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
         </div>
-        <div class="mport">
-          <img src="imgs/ninja.jpg" class="mport-pic" />
-          <div class="bio-text">
-            Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut ninja wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis ninja autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam ninja ipsum liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi ninja non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes ninja demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas ninja est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum ninja est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem ninja ipsum modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-          </div>
+      </div>
+      <div class="dev">
+        <img src="imgs/ninja.jpg" class="dev-pic" />
+        <div class="bio-text">
+          Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+          magna aliquam erat volutpat. Ut ninja wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+          lobortis nisl ut aliquip ex ea commodo consequat. Duis ninja autem vel eum iriure dolor in hendrerit in vulputate
+          velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio
+          dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam ninja ipsum
+          liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim
+          assum. Typi ninja non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes
+          ninja demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas ninja est etiam processus dynamicus,
+          qui sequitur mutationem consuetudium lectorum. Mirum ninja est notare quam littera gothica, quam nunc putamus parum
+          claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem ninja ipsum
+          modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
         </div>
-        <div class="dev">
-          <img src="imgs/ninja.jpg" class="dev-pic" />
-          <div class="bio-text">
-            Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut ninja wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis ninja autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam ninja ipsum liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi ninja non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes ninja demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas ninja est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum ninja est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem ninja ipsum modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-          </div>
-        </div>
-      </section
-    </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script src="/scripts/model/question.js"></script>
-    <script src="/scripts/model/user.js"></script>
-    <script src="/scripts/controller/senseiController.js"></script>
-    <script src="/scripts/view/questionView.js"></script>
-    <script src="/scripts/controller/aboutController.js"></script>
-    <script src="/scripts/model/stat.js"></script>
-    <script src="/scripts/controller/eventHandler.js"></script>
-    <script src="/scripts/controller/routes.js"></script>
-  </body>
+      </div>
+    </section>
+    <section class="trivia-complete-container">
+      <div class="final-header">Congrats you completed it!</div>
+      <div class="final-score">FINAL SCORE: 000</div>
+      <div class="final-time">TIME: 00:00</div>
+      <div class="play-again-button">PLAY AGAIN?</div>
+    </section>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  <script src="/scripts/model/question.js"></script>
+  <script src="/scripts/model/user.js"></script>
+  <script src="/scripts/model/stat.js"></script>
+  <script src="/scripts/view/questionView.js"></script>
+  <script src="/scripts/view/statView.js"></script>
+  <script src="/scripts/controller/statsController.js"></script>
+  <script src="/scripts/controller/senseiController.js"></script>
+  <script src="/scripts/controller/aboutController.js"></script>
+  <script src="/scripts/controller/eventHandler.js"></script>
+  <script src="/scripts/controller/routes.js"></script>
+</body>
+
 </html>
