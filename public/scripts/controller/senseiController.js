@@ -4,7 +4,8 @@ var app = app || {};
 
 (function (module) {
   function htmlDecoder(value) {
-    return $('.question-selected').html(value).text();
+    return $('.decoder').html(value).text();
+
   }
 
   const Sensei = {};
@@ -79,18 +80,32 @@ var app = app || {};
     });
   }
 
-  Sensei.evaluateAnswer = () => {
-    console.log(app.Question.selectedAnswer + ' === ' + htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer))
+  Sensei.evaluateAnswer = function () {
+    // console.log('eval ans', app.Question.all[0]);
+    // console.log(app.Question.selectedAnswer + ' === ' + htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer))
+    $('.option').each(function(){
+      // console.log('eval', $(this).html())
+      let optionText = $(this).html();
+      let correctAns = htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer);
+      // debugger;
+      if (optionText === correctAns) {
+        $(this).css('background-color', 'green');
+        // console.log('highlight', $(this));
+      }
+    })
+
     if (app.Question.selectedAnswer === htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer)) {
-      console.log('Answer is Correct');
+      // console.log('Answer is Correct');
       app.stat.numberOfCorrect +=1;
       let timeTaken = app.stat.time - app.stat.questionStartTime;
       console.log(app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken));
+
     } else {
-      console.log("Answer is Wrong");
+      // console.log("Answer is Wrong");
     }
     app.statView.updateStats();
   }
+
 
   module.Sensei = Sensei;
 })(app);
