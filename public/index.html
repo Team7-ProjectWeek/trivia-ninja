@@ -12,14 +12,14 @@
 </head>
 <body>
   <header>
-    <h1> Trivia Ninja! </h1>
+    <h1><a href="/">Trivia Ninja!</a></h1>
     <nav class="main-nav">
       <div class="ham-menu"></div>
       <ul>
-        <li> <a href="/game/50">Free Play</a></li>
-        <li> <a href="/about"> About Team 7 </a> </li>
+        <li><a href="/game/5">Free Play</a></li>
+        <li><a href="/about">About Team 7</a></li>
+      </ul>
     </nav>
-
     <script id="questionTemplate" type="text/x-handlebars-template">
       <div class="question-container">
         <div class="question-header">{{{question}}}</div>
@@ -34,6 +34,8 @@
           <div class="option">{{{option2}}}</div>
           {{/if}}
         </div>
+        <div class="quit"><a href="/">Quit</a></div>
+        <div class="free">FREE</div>
         <div class="question-button">NEXT</div>
       </div>
     </script>
@@ -132,6 +134,7 @@
   <script src="/scripts/view/statView.js"></script>
   <script src="/scripts/controller/statsController.js"></script>
   <script src="/scripts/controller/senseiController.js"></script>
+  <script src="/scripts/controller/freePlayController.js"></script>
   <script src="/scripts/controller/aboutController.js"></script>
   <script src="/scripts/controller/eventHandler.js"></script>
   <script src="/scripts/controller/routes.js"></script>

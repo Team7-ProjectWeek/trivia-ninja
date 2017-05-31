@@ -14,7 +14,7 @@ var app = app || {};
   stat.time = 0;
 
   stat.timeInit = function () {
-     stat.timer = setInterval(stat.countTimeTotalScore, 1000);
+    stat.timer = setInterval(stat.countTimeTotalScore, 1000);
   }
 
   stat.countTimeTotalScore = function () {

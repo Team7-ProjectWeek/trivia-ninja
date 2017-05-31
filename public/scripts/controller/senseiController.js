@@ -3,7 +3,7 @@
 var app = app || {};
 
 (function (module) {
-  function htmlDecoder(value) {
+  function htmlDecoder (value) {
     return $('.question-selected').html(value).text();
   }
 
@@ -58,18 +58,8 @@ var app = app || {};
   })
 
   Sensei.getQuestions = (ctx, next) => {
+    $('ul li').hide();
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
-    console.log(url);
-    app.Question.currentQuestionIndex = 0;
-    $.get(url).then((data) => {
-      app.Question.loadAll(data.results);
-      app.stat.timeInit();
-      app.QuestionView.serveQuestion();
-    });
-  }
-
-  Sensei.freeQuestions = (ctx, next) => {
-    let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
     console.log(url);
     app.Question.currentQuestionIndex = 0;
     $.get(url).then((data) => {
