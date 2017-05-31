@@ -33,6 +33,8 @@ var app = app || {};
     }
     $('.stats-timer').html(`Time: ${stat.time}`);
     $('.stats-score').html(`Score: ${stat.score}`);
+    $('.stats-correct-answers').html(`CORRECT ANSWERS: ${stat.numberOfCorrect}`);
+    $('.stats-progess').html(`Question: ${app.Question.currentQuestionIndex+1}/${app.Question.all.length}`);
   }
 
   stat.stopTime = function () {
