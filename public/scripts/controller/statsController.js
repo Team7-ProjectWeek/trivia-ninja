@@ -13,5 +13,14 @@ var app = app || {};
     app.statView.complete();
   }
 
+  statsController.populateTopScores = function(){
+    $.get('/topScores').then(
+      (result) => {
+        result.forEach((row) =>{
+          $('.leaderboard-div').append(app.stat.scoreToHtml(row));
+        })
+      })
+  }
+
   module.statsController = statsController;
 })(app);

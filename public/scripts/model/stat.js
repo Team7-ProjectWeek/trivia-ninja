@@ -5,6 +5,11 @@ var app = app || {};
 (function (module) {
   const stat = {};
 
+  stat.scoreToHtml = (rawScore) => {
+    let template = Handlebars.compile($('#leaderBoardScoreTemplate').html());
+    return template(rawScore)
+  }
+
   let easy = 100, medium = 200, hard = 300;
   let difficultyValue = 0;
   stat.timer;
