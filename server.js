@@ -18,6 +18,12 @@ app.use(express.static('./public'))
 
 dbInitialize();
 
+app.get('/topScores', function(request,response){
+  client.query(`select initials, total_score, total_time from scores order by total_score desc limit 10; `)
+        .then((results) => response.send(results.rows))
+        .catch(console.error);
+});
+
 app.post('/logScore', function(request, response) {
   console.log(request.body);
   client.query(`INSERT INTO 
