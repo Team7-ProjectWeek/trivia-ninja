@@ -30,11 +30,8 @@ var app = app || {};
     (err) => {
       console.log(err);
     });
+  };
 
-  }
-  var x;
-  var y;
-//probably don't need these two
   Sensei.getNumQuestions = () => {
     return $('#numQuestions option:selected').text();
   };
@@ -43,11 +40,14 @@ var app = app || {};
     return $('#difQuestions option:selected').text();
   };
 
-  Sensei.replaceUrl = (x, y) => {
-    // both do the same thing
-    location.replace(`/game/${x}/${y}`);
-    // location.href = `/game/${x}/${y}`
+  Sensei.replaceUrl = (numQuestions, difQuestions) => {
+    location.replace(`/game/${numQuestions}/${difQuestions}`);
   }
+  $('#playButton').on('click', function (event) {
+    event.preventDefault;
+    Sensei.go();
+  })
+
 
   Sensei.go = () => {
     Sensei.replaceUrl(Sensei.getNumQuestions(), Sensei.getDifQuestions());
@@ -64,20 +64,17 @@ var app = app || {};
     });
   }
 
-  Sensei.evaluateAnswer = () =>{
-    console.log(app.Question.selectedAnswer+ " === " +app.Question.all[app.Question.currentQuestionIndex].correct_answer)
-    if(app.Question.selectedAnswer === app.Question.all[app.Question.currentQuestionIndex].correct_answer){
-      
-      console.log("Answer is Correct");
+  Sensei.evaluateAnswer = () => {
+    console.log(app.Question.selectedAnswer + ' === ' + app.Question.all[app.Question.currentQuestionIndex].correct_answer)
+    if (app.Question.selectedAnswer === app.Question.all[app.Question.currentQuestionIndex].correct_answer) {
+      console.log('Answer is Correct');
       app.stat.numberOfCorrect +=1;
       let timeTaken = app.stat.time - app.stat.questionStartTime;
 
       console.log(app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken));
-      
-    }else{
+    } else {
       console.log("Answer is Wrong");
     }
-      
   }
 
   module.Sensei = Sensei;

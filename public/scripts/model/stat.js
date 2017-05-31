@@ -12,23 +12,22 @@ var app = app || {};
   stat.score = 0;
   stat.questionStartTime = 0;
   stat.time = 0;
-  
+
   stat.timeInit = function () {
      stat.timer = setInterval(stat.countTimeTotalScore, 1000);
   }
 
-
   stat.countTimeTotalScore = function () {
     stat.time += 1;
 
-    switch(app.Question.all[app.Question.currentQuestionIndex].difficulty){
-      case "easy":
+    switch (app.Question.all[app.Question.currentQuestionIndex].difficulty) {
+      case 'easy':
         stat.score -= 1;
         break;
-      case "medium":
+      case 'medium':
         stat.score -= 2;
         break;
-      case "hard":
+      case 'hard':
         stat.score -= 3;
         break;
     }
@@ -41,14 +40,14 @@ var app = app || {};
   }
 
   stat.statCalculator = function (difficulty, time) {
-    switch(difficulty){
-      case "easy":
+    switch (difficulty) {
+      case 'easy':
         difficultyValue = easy;
         break;
-      case "medium":
+      case 'medium':
         difficultyValue = medium;
         break;
-      case "hard":
+      case 'hard':
         difficulty = hard;
         break;
     }

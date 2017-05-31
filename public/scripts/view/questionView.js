@@ -16,6 +16,7 @@ var app = app || {};
 
     console.log(app.Question.currentQuestionIndex)
 
+
     $('.question-button').on('click', function () {
 
       if ($('.question-button').text() === 'DONE') {
@@ -38,7 +39,6 @@ var app = app || {};
       $(this).siblings().removeClass('question-selected');
       $(this).toggleClass('question-selected');
       app.Question.selectedAnswer = $(this).text();
-
     })
   }
 

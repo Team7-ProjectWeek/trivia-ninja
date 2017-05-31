@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +10,6 @@
   <link rel="stylesheet" href="/css/layout.css" />
   <title>Trivia Ninja</title>
 </head>
-
 <body>
   <header>
     <h1> Trivia Ninja! </h1>
@@ -35,7 +33,6 @@
           <div class="option">{{{option2}}}</div>
           {{/if}}
         </div>
-
         <div class="question-button">NEXT</div>
       </div>
     </script>
@@ -44,26 +41,27 @@
     <h1 class="main-header"> Ready to Train? </h1>
     <form action="/game/10/medium" id="mainGame" class="game-form">
       <label for="questions"> Select Number of Questions </label>
-      <select id="numQuestions" name="numQuestions" class="num-question">
+      <select id="numQuestions" class="num-question">
           <option>10</option>
           <option>20</option>
           <option>30</option>
           <option>40</option>
           <option>50</option>
         </select>
-      <label for="difficulty level"> Choose Your Difficulty </label>
-      <select id="difQuestions" name="difficulty" class="select-difficulty">
+        <label for="difficulty level"> Choose Your Difficulty </label>
+        <select id="difQuestions" class="select-difficulty">
           <option>easy</option>
           <option>medium</option>
           <option>hard</option>
         </select>
-      <button id="playButton" name="playButton" href="/game" class="play-button"> Play Now! </button>
-    </form>
-    <div><a id="theButton" href="/game/10/medium">Clicker meee</a></div>
-    <div id="questionModal">
-      <div class="stats-container">
-        <div class="stats-timer">TIME: 0</div>
-        <div class="stats-score">SCORE: 0</div>
+        <button id="playButton" class="play-button"> Play Now! </button>
+      </form>
+      <div><a id="theButton" href="/game/10/medium">Clicker meee</a></div>
+      <div id="questionModal">
+        <div class="stats-container">
+          <div class="stats-timer">TIME: 0</div>
+          <div class="stats-score">SCORE: 0</div>
+        </div>
       </div>
     </div>
     <section id="about" class="about-team">
