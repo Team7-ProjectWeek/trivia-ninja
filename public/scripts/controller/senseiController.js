@@ -62,7 +62,6 @@ var app = app || {};
     $('ul li').hide();
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
     console.log(url);
-    app.Question.isFreePlay = false;
     app.Question.currentQuestionIndex = 0;
     $.get(url).then((data) => {
       app.Question.loadAll(data.results);
@@ -75,7 +74,6 @@ var app = app || {};
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
     console.log(url);
     app.Question.currentQuestionIndex = 0;
-    app.Question.isFreePlay =true;
     $.get(url).then((data) => {
       app.Question.loadAll(data.results);
       app.stat.timeInit();
@@ -84,9 +82,7 @@ var app = app || {};
   }
 
   Sensei.evaluateAnswer = function () {
-    // console.log('eval ans', app.Question.all[0]);
     $('.option').each(function(){
-      // console.log('eval', $(this).html())
       let optionText = $(this).html();
       let correctAns = htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer);
       // debugger;
@@ -95,16 +91,13 @@ var app = app || {};
         // console.log('highlight', $(this));
       }
     })
-  console.log(app.Question.selectedAnswer + ' === ' + htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer))
 
     if (app.Question.selectedAnswer === htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer)) {
-       console.log('Answer is Correct');
+      // console.log('Answer is Correct');
       app.stat.numberOfCorrect +=1;
       let timeTaken = app.stat.time - app.stat.questionStartTime;
       console.log(app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken));
 
-    } else {
-      // console.log("Answer is Wrong");
     }
     app.statView.updateStats();
   }

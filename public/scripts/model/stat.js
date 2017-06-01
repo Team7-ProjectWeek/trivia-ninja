@@ -19,7 +19,7 @@ var app = app || {};
   stat.score = 0;
   stat.questionStartTime = 0;
   stat.time = 0;
-  stat.runningAvgDifficulty = 0;
+  stat.runningTotalScore  = 0;
   stat.runningQuestionCount = 0;
 
   stat.timeInit = function () {
@@ -63,8 +63,8 @@ var app = app || {};
         difficultyValue = hard;
         break;
     }
-    stat.runningAvgDifficulty = stat.runningAvgDifficulty + difficultyValue;
-    stat.score = (stat.numberOfCorrect * (stat.runningAvgDifficulty/stat.runningQuestionCount) - time);
+    stat.runningTotalScore = stat.runningTotalScore + difficultyValue;
+    stat.score = ((stat.numberOfCorrect * (stat.runningTotalScore/stat.runningQuestionCount)) - time*((stat.runningTotalScore/stat.runningQuestionCount) / 100));
   }
 
   module.stat = stat;
