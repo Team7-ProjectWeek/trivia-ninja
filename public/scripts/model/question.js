@@ -16,7 +16,8 @@ var app = app || {};
     let template = Handlebars.compile($('#questionTemplate').html());
     let answers = [this.correct_answer];
     this.incorrect_answers.forEach(e => answers.push(e));
-
+    this.isFreePlay = app.Question.isFreePlay;
+    console.log(this.isFreePlay);
     if (this.type === 'multiple') {
       this.isMultiple = true;
       this.option1 = answerRandomizer(answers)[0];
@@ -35,6 +36,7 @@ var app = app || {};
 
   Question.all = [];
   Question.currentQuestionIndex = 0;
+  Question.isFreePlay = false;
   Question.selectedAnswer = "none selected";
 
   Question.loadAll = (rawQuestions) => {

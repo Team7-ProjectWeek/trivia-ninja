@@ -62,6 +62,7 @@ var app = app || {};
     $('ul li').hide();
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
     console.log(url);
+    app.Question.isFreePlay = false;
     app.Question.currentQuestionIndex = 0;
     $.get(url).then((data) => {
       app.Question.loadAll(data.results);
@@ -74,6 +75,7 @@ var app = app || {};
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
     console.log(url);
     app.Question.currentQuestionIndex = 0;
+    app.Question.isFreePlay =true;
     $.get(url).then((data) => {
       app.Question.loadAll(data.results);
       app.stat.timeInit();
