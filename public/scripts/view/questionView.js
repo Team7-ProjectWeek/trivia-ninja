@@ -41,7 +41,10 @@ var app = app || {};
       if (app.Question.currentQuestionIndex < app.Question.all.length - 1) {
         app.Sensei.evaluateAnswer();
         app.Question.currentQuestionIndex += 1;
-        app.QuestionView.serveQuestion();
+        app.stat.stopTime();
+        window.setTimeout(function(){
+          app.stat.timeInit();
+          app.QuestionView.serveQuestion()}, 650);
       } else {
         console.log('in changing done');
         app.Sensei.evaluateAnswer();
