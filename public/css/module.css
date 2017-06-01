@@ -15,6 +15,11 @@
   display: inline;
 }
 
+.brand-name a{
+  text-decoration: none;
+  color: black;
+}
+
 .main-nav{
   display: flex;
   width: 100%;
@@ -37,7 +42,7 @@
   background-color: grey;
   padding: 15px;
   border-radius: 5px;
-  
+
 }
 
 
