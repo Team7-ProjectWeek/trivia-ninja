@@ -41,6 +41,7 @@ var app = app || {};
 
 
       $('.free-button').on('click', function () {
+        
         if (app.Question.selectedAnswer != ''){
           if (app.Question.currentQuestionIndex < app.Question.all.length - 1) {
             app.Sensei.evaluateAnswer();

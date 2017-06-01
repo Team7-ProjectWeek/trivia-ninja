@@ -7,6 +7,7 @@ var app = app || {};
 
   freePlayController.freeQuestions = (ctx, next) => {
     $('#about').hide();
+    $('#questionModal').show();
     // show free play button
     if (app.Sensei.paramsValidator(ctx.params.numOfQuestions, 'any')) {
       let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
