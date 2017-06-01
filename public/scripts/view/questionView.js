@@ -9,23 +9,28 @@ var app = app || {};
     $('.main-header').hide();
     $('#mainGame').hide();
     $('.question-container').empty();
-    $('.stats-container').show();
+    $('.stats-container').css('display','flex');
     app.stat.questionStartTime = app.stat.time;
+
+    app.statView.updateStats();
     $('#questionModal').append(app.Question.all[app.Question.currentQuestionIndex].toHtml());
 
     console.log(app.Question.currentQuestionIndex)
 
     $('.question-button').on('click', function () {
       if ($('.question-button').text() === 'DONE') {
-        console.log('In Done Eval');
         app.statsController.completeGame();
       } else {
+        // console.log('if', app.Question.all[0]);
         if (app.Question.currentQuestionIndex < app.Question.all.length - 2) {
           app.Sensei.evaluateAnswer();
           app.Question.currentQuestionIndex += 1;
-          app.QuestionView.serveQuestion();
+          app.stat.stopTime();
+          window.setTimeout(function(){
+            app.stat.timeInit();
+            app.QuestionView.serveQuestion()}, 900);
+
         } else {
-          console.log('in changing done');
           app.Sensei.evaluateAnswer();
           app.Question.currentQuestionIndex += 1;
           app.QuestionView.serveQuestion();
@@ -50,7 +55,7 @@ var app = app || {};
     $('.option').on('click', function (event) {
       $(this).siblings().removeClass('question-selected');
       $(this).toggleClass('question-selected');
-      app.Question.selectedAnswer = $(this).text();
+      // app.Question.selectedAnswer = $(this).text();
     })
   }
 

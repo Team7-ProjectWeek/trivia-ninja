@@ -1,8 +1,10 @@
 /*Homepage Region*/
 .game-box {
-  text-align: center;
 }
 
+.main-header{
+  text-align: center;
+}
 .game-form {
   text-align: center;
   width:550px;
@@ -92,22 +94,18 @@
 }
 
 .stats-container {
+  font-family: 'Raleway', sans-serif;
   display: none;
+  text-align: center;
   background-color: pink;
   margin:auto;
   width: 80%;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 600;
 }
 
-.stats-timer{
-  display:inline;
-  text-align: left;
-}
-
-.stats-score{
-  display:inline;
-  float:right;
+.stats-container div{
+  width:25%;
 }
 
 .question-selected {
@@ -146,24 +144,32 @@
   margin:auto;
   background-color: grey;
   color:white;
+  text-align:center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.line-score-container{
+  display:flex;
+  justify-content: space-around;
+  align-items:center;
+}
+
+.line-score-container div{
+ width: 30%;
+}
+
+.save-score-button {
+  width: 10%;
+  margin:auto;
+  margin-top:1%;
+  margin-bottom:1%;
+  background-color: pink;
+  text-align: center;
 }
 
 .final-header{
   font-size: 2em;
   text-align: center;
-}
-
-.final-score{
-  margin-top: 3%;
-  font-size: 1.6em;
-  font-weight: 600;
-  padding: 2%;
-}
-
-.final-time{
-  font-size: 1.6em;
-  font-weight: 600;
-  padding: 2%;
 }
 
 .play-again-button{

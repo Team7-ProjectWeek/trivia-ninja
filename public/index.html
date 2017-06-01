@@ -39,6 +39,13 @@
         <div class="question-button">NEXT</div>
       </div>
     </script>
+    <script id="leaderBoardScoreTemplate" type="text/x-handlebars-template">
+      <div class="line-score-container">
+        <div class="ranker-name">{{initials}}</div>
+        <div class="final-score">FINAL SCORE:{{{ total_score}}}</div>
+        <div class="final-time">TIME: {{total_time}}</div>
+      </div>
+    </script>
   </header>
   <main id="gameBox" class="game-box">
     <h1 class="main-header"> Ready to Train? </h1>
@@ -59,13 +66,15 @@
         </select>
         <button id="playButton" class="play-button"> Play Now! </button>
       </form>
-      <div id="questionModal">
-        <div class="stats-container">
-          <div class="stats-timer">TIME: 0</div>
-          <div class="stats-score">SCORE: 0</div>
-        </div>
+    <div id="questionModal">
+      <div class="stats-container">
+        <div class="stats-timer">TIME: 0</div>
+        <div class="stats-score">TOTAL SCORE: 0</div>
+        <div class="stats-correct-answers">CORRECT ANSWERS: 0</div>
+        <div class="stats-progress"> Question: 0/0</div>
       </div>
     </div>
+    <div class="decoder"> </div>
     <section id="about" class="about-team">
       <h1>Team 7</h1>
       <div class="nicu">
@@ -119,9 +128,14 @@
     </section>
     <section class="trivia-complete-container">
       <div class="final-header">Congrats you completed it!</div>
-      <div class="final-score">FINAL SCORE: 000</div>
-      <div class="final-time">TIME: 00:00</div>
-      <div class="play-again-button"><a href="/" >PLAY AGAIN?</a></div>
+      <div class="line-score-container">
+        <div><input id="initials" type="text" placeholder="3 Character Initial.." maxlength="3" /></div>
+        <div class="final-score">FINAL SCORE: 000</div>
+        <div class="final-time">TIME: 00:00</div>
+      </div>
+      <div class="save-score-button">SAVE SCORE</div>
+      <div class="leaderboard-div">TOP 10</div>
+      <div class="play-again-button"><a href="/">PLAY AGAIN?</a></div>
     </section>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
