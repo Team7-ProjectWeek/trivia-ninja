@@ -3,9 +3,9 @@
 var app = app || {};
 
 (function (module) {
+
   function htmlDecoder(value) {
     return $('.decoder').html(value).text();
-
   }
 
   const Sensei = {};
@@ -59,6 +59,7 @@ var app = app || {};
   })
 
   Sensei.getQuestions = (ctx, next) => {
+    $('ul li').hide();
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
     console.log(url);
     app.Question.currentQuestionIndex = 0;

@@ -5,7 +5,8 @@ const pg = require('pg');
 const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;
-const conString = process.env.DATABASE_URL|| 'postgres://localhost:5432'; 
+ // 'postgres://localhost:5432'
+const conString = process.env.DATABASE_URL || 'postgres://postgres:passwordhere@localhost:5432/kilovolt';
 
 const app = express();
 const client = new pg.Client(conString);
@@ -26,8 +27,9 @@ app.get('/topScores', function(request,response){
 
 app.post('/logScore', function(request, response) {
   console.log(request.body);
-  client.query(`INSERT INTO 
-                scores(initials, game_id, total_score, total_time) 
+
+  client.query(`INSERT INTO
+                scores(initials, game_id, total_score, total_time)
                 VALUES ($1,$2,$3,$4);`,
                 [request.body.initials,
                  request.body.gameId,
@@ -49,7 +51,8 @@ app.listen(PORT, function() {
 
 
 
-//Database initialization 
+
+//Database initialization
 function dbInitialize(){
     client.query(`
     CREATE TABLE IF NOT EXISTS
@@ -58,7 +61,7 @@ function dbInitialize(){
       initials VARCHAR(3) NOT NULL,
       game_id VARCHAR(255),
       total_score INT,
-      total_time INT 
+      total_time INT
     );`
   ).catch(console.error);
 }

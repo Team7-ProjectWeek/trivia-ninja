@@ -10,30 +10,6 @@
   <link rel="stylesheet" href="/css/module.css" />
   <link rel="stylesheet" href="/css/layout.css" />
   <title>Trivia Ninja</title>
-  <script id="questionTemplate" type="text/x-handlebars-template">
-    <div class="question-container">
-      <div class="question-header">{{{question}}}</div>
-      <div class="option-container">
-        {{#if isMultiple}}
-        <div class="option">{{{option1}}}</div>
-        <div class="option">{{{option2}}}</div>
-        <div class="option">{{{option3}}}</div>
-        <div class="option">{{{option4}}}</div>
-        {{else}}
-        <div class="option">{{{option1}}}</div>
-        <div class="option">{{{option2}}}</div>
-        {{/if}}
-      </div>
-      <div class="question-button">NEXT</div>
-    </div>
-  </script>
-  <script id="leaderBoardScoreTemplate" type="text/x-handlebars-template">
-    <div class="line-score-container">
-      <div class="ranker-name">{{initials}}</div>
-      <div class="final-score">FINAL SCORE:{{{ total_score}}}</div>
-      <div class="final-time">TIME: {{total_time}}</div>
-    </div>
-  </script>
 </head>
 <body>
   <header>
@@ -41,10 +17,37 @@
       <!--<div class="ham-menu"></div>-->
       <div class="brand-name">Trivia Ninja!</div>
       <ul>
-        <li> <a href="/game/50">FREE PLAY</a></li>
-        <li> <a href="/about"> About Team 7 </a> </li>
-      <ul/>
+        <li><a href="/game/5">Free Play</a></li>
+        <li><a href="/about">About Team 7</a></li>
+      </ul>
     </nav>
+    <script id="questionTemplate" type="text/x-handlebars-template">
+      <div class="question-container">
+        <div class="question-header">{{{question}}}</div>
+        <div class="option-container">
+          {{#if isMultiple}}
+          <div class="option">{{{option1}}}</div>
+          <div class="option">{{{option2}}}</div>
+          <div class="option">{{{option3}}}</div>
+          <div class="option">{{{option4}}}</div>
+          {{else}}
+          <div class="option">{{{option1}}}</div>
+          <div class="option">{{{option2}}}</div>
+          {{/if}}
+        </div>
+        <div class="quit"><a href="/">Quit</a></div>
+        <div class="free">FREE</div>
+        <div class="question-button">NEXT</div>
+      </div>
+    </script>
+    <script id="leaderBoardScoreTemplate" type="text/x-handlebars-template">
+      <div class="line-score-container">
+        <div class="ranker-name">{{initials}}</div>
+        <div class="final-score">FINAL SCORE:{{{ total_score}}}</div>
+        <div class="final-time">TIME: {{total_time}}</div>
+      </div>
+    </script>
+
   </header>
   <main id="gameBox" class="game-box">
     <h1 class="main-header"> Ready to Train? </h1>
@@ -147,6 +150,7 @@
   <script src="/scripts/view/statView.js"></script>
   <script src="/scripts/controller/statsController.js"></script>
   <script src="/scripts/controller/senseiController.js"></script>
+  <script src="/scripts/controller/freePlayController.js"></script>
   <script src="/scripts/controller/aboutController.js"></script>
   <script src="/scripts/controller/eventHandler.js"></script>
   <script src="/scripts/controller/routes.js"></script>

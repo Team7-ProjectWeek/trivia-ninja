@@ -10,18 +10,24 @@ var app = app || {};
     return template(rawScore)
   }
 
-  let easy = 100, medium = 200, hard = 300;
+  let easy = 100;
+  let medium = 200;
+  let hard = 300;
   let difficultyValue = 0;
   stat.timer;
   stat.numberOfCorrect = 0;
   stat.score = 0;
   stat.questionStartTime = 0;
   stat.time = 0;
+  stat.runningPoints = 0;
 
   stat.timeInit = function () {
-     stat.timer = setInterval(stat.countTimeTotalScore, 1000);
+    stat.timer = setInterval(stat.countTimeTotalScore, 1000);
   }
 
+  stat.averageDifficulty = function () {
+    // running average of points?
+  }
   stat.countTimeTotalScore = function () {
     stat.time += 1;
 
@@ -55,10 +61,11 @@ var app = app || {};
         difficultyValue = medium;
         break;
       case 'hard':
-        difficulty = hard;
+        difficultyValue = hard;
         break;
     }
-    stat.score = (stat.numberOfCorrect * difficultyValue) - time;
+    stat.runningPoints = stat.runningPoints + difficultyValue;
+    stat.score = (stat.numberOfCorrect * (stat.runningPoints/(app.Question.currentQuestionIndex + 1))) - time;
   }
 
   module.stat = stat;
