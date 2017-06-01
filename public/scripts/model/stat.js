@@ -5,7 +5,9 @@ var app = app || {};
 (function (module) {
   const stat = {};
 
-  let easy = 100, medium = 200, hard = 300;
+  let easy = 100;
+  let medium = 200;
+  let hard = 300;
   let difficultyValue = 0;
   stat.timer;
   stat.numberOfCorrect = 0;
