@@ -6,7 +6,11 @@ var app = app || {};
   const freePlayController = {};
 
   freePlayController.freeQuestions = (ctx, next) => {
+<<<<<<< HEAD
     $('ul li').hide();
+=======
+    $('#about').hide();
+>>>>>>> b53e10c2e46f21dca6906861bc265fe170db0ab7
     // show free play button
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
     console.log(url);
@@ -19,7 +23,6 @@ var app = app || {};
   }
 
   freePlayController.continueFreeQuestions = (ctx, next) => {
-    $('ul li').hide();
     // show free play button
     let url = `https://opentdb.com/api.php?amount=50&token=${app.user.token.token}`
     console.log(url);
