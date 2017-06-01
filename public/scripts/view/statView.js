@@ -16,8 +16,13 @@ var app = app || {};
 
   statView.updateStats = () =>{
     $('.stats-correct-answers').html(`CORRECT ANSWERS: ${app.stat.numberOfCorrect}`);
-    $('.stats-progress').html(`Question: ${app.Question.currentQuestionIndex+1}/${app.Question.all.length}`);
+    if (!app.Question.isFreePlay) {
+      $('.stats-progress').html(`Question: ${app.Question.currentQuestionIndex + 1}/${app.Question.all.length}`);
+    } else {
+      $('.stats-progress').html(`Question: ${app.stat.runningQuestionCount}/Infinity`);
+      console.log('here', app.stat.runningQuestionCount)
+    }
   }
-  
+
   module.statView = statView;
 })(app);

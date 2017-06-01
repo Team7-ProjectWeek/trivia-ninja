@@ -3,17 +3,16 @@
 var app = app || {};
 
 (function (module) {
-
-  function htmlDecoder(value) {
+  function htmlDecoder (value) {
     return $('.decoder').html(value).text();
   }
 
   const Sensei = {};
 
   Sensei.hasValidToken = (ctx, next) => {
-    if(localStorage.apiToken){
+    if (localStorage.apiToken) {
       app.user.token = JSON.parse(localStorage.apiToken);
-      console.log("Has local token");
+      console.log('Has local token');
     }
 
     if (!app.user.token || app.user.token.expirationTime <= Math.floor((new Date()).getTime() / 1000)) {
@@ -31,7 +30,7 @@ var app = app || {};
         data.issueTime = Math.floor(new Date().getTime() / 1000);
         data.expirationTime = data.issueTime + 21600; // 21600 is 6 hours
         console.log(data);
-        localStorage.setItem("apiToken", JSON.stringify(data));
+        localStorage.setItem('apiToken', JSON.stringify(data));
         app.user.token = data;
         callback();
       } else {
@@ -87,26 +86,20 @@ var app = app || {};
   }
 
   Sensei.evaluateAnswer = function () {
-    $('.option').each(function(){
+    $('.option').each(function () {
       let optionText = $(this).html();
       let correctAns = htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer);
-      // debugger;
       if (optionText === correctAns) {
         $(this).css('background-color', 'green');
-        // console.log('highlight', $(this));
       }
     })
 
     if (app.Question.selectedAnswer === htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer)) {
-      // console.log('Answer is Correct');
-      app.stat.numberOfCorrect +=1;
+      app.stat.numberOfCorrect += 1;
       let timeTaken = app.stat.time - app.stat.questionStartTime;
-      console.log(app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken));
-
+      app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken);
     }
-    app.statView.updateStats();
   }
-
 
   module.Sensei = Sensei;
 })(app);

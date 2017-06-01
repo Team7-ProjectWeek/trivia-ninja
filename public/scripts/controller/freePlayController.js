@@ -17,6 +17,7 @@ var app = app || {};
       app.QuestionView.serveQuestion();
       $('.stats-timer').hide();
       $('.stats-score').hide();
+      $('.stats-progress').html('Question: 0/Infinity')
     });
   }
 
