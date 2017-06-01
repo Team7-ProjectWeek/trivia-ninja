@@ -11,6 +11,11 @@ var app = app || {};
   const Sensei = {};
 
   Sensei.hasValidToken = (ctx, next) => {
+    if(localStorage.apiToken){
+      app.user.token = JSON.parse(localStorage.apiToken);
+      console.log("Has local token");
+    }
+
     if (!app.user.token || app.user.token.expirationTime <= Math.floor((new Date()).getTime() / 1000)) {
       console.log('Getting token now');
       app.Sensei.tokenRequest(next);
@@ -26,6 +31,7 @@ var app = app || {};
         data.issueTime = Math.floor(new Date().getTime() / 1000);
         data.expirationTime = data.issueTime + 21600; // 21600 is 6 hours
         console.log(data);
+        localStorage.setItem("apiToken", JSON.stringify(data));
         app.user.token = data;
         callback();
       } else {
