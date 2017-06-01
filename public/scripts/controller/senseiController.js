@@ -38,12 +38,9 @@ var app = app || {};
       if (data.response_code === 0) {
         data.issueTime = Math.floor(new Date().getTime() / 1000);
         data.expirationTime = data.issueTime + 21600; // 21600 is 6 hours
-        console.log(data);
         localStorage.setItem('apiToken', JSON.stringify(data));
         app.user.token = data;
         callback();
-      } else {
-        console.log('Invalid Token Request')
       }
     },
     (err) => {
@@ -75,7 +72,6 @@ var app = app || {};
   Sensei.getQuestions = (ctx, next) => {
     if (app.Sensei.paramsValidator(ctx.params.numOfQuestions, ctx.params.difficulty)){
       let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
-      console.log(url);
       app.Question.isFreePlay = false;
       app.Question.currentQuestionIndex = 0;
       $.get(url).then((data) => {
@@ -88,7 +84,6 @@ var app = app || {};
 
   Sensei.freeQuestions = (ctx, next) => {
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
-    console.log(url);
     app.Question.currentQuestionIndex = 0;
     $.get(url).then((data) => {
       app.Question.loadAll(data.results);

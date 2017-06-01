@@ -43,11 +43,6 @@ var app = app || {};
     $('.stats-timer').html(`Time: ${stat.time}`);
     $('.stats-score').html(`Score: ${stat.score}`);
     $('.stats-correct-answers').html(`CORRECT ANSWERS: ${stat.numberOfCorrect}`);
-    // if (app.Question.isFreePlay) {
-    //   $('.stats-progess').html(`Question: ${stat.runningQuestionCount - 1}/Infinity`);
-    // } else {
-    //   $('.stats-progess').html(`Question: ${stat.runningQuestionCount - 1}/${app.Question.all.length}`);
-    // }
   }
 
   stat.stopTime = function () {
