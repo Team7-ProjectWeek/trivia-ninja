@@ -47,3 +47,8 @@ label {
   font-family: lastninja;
   src: url('/fonts/lastninja.ttf');
 }
+
+@font-face {
+  font-family: CFSamuraiBob.ttf;
+  src: url('/fonts/CFSamuraiBob.ttf');
+}
