@@ -9,6 +9,8 @@ var app = app || {};
     $('.main-header').hide();
     $('#mainGame').hide();
     $('#about').fadeIn(800);
+    $('#questionModal').hide();
+
   }
 
   module.aboutController = aboutController;
