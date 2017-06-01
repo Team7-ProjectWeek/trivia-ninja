@@ -3,8 +3,7 @@
 var app = app || {};
 
 (function (module) {
-
-  function htmlDecoder(value) {
+  function htmlDecoder (value) {
     return $('.decoder').html(value).text();
   }
 
@@ -22,6 +21,11 @@ var app = app || {};
 
 
   Sensei.hasValidToken = (ctx, next) => {
+    if (localStorage.apiToken) {
+      app.user.token = JSON.parse(localStorage.apiToken);
+      console.log('Has local token');
+    }
+
     if (!app.user.token || app.user.token.expirationTime <= Math.floor((new Date()).getTime() / 1000)) {
       console.log('Getting token now');
       app.Sensei.tokenRequest(next);
@@ -37,6 +41,7 @@ var app = app || {};
         data.issueTime = Math.floor(new Date().getTime() / 1000);
         data.expirationTime = data.issueTime + 21600; // 21600 is 6 hours
         console.log(data);
+        localStorage.setItem('apiToken', JSON.stringify(data));
         app.user.token = data;
         callback();
       } else {
@@ -70,7 +75,6 @@ var app = app || {};
   })
 
   Sensei.getQuestions = (ctx, next) => {
-    $('ul li').hide();
     if (app.Sensei.paramsValidator(ctx.params.numOfQuestions, ctx.params.difficulty)){
       let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
       console.log(url);
@@ -82,14 +86,12 @@ var app = app || {};
         app.QuestionView.serveQuestion();
       });
     }
-
   }
 
   Sensei.freeQuestions = (ctx, next) => {
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
     console.log(url);
     app.Question.currentQuestionIndex = 0;
-    app.Question.isFreePlay =true;
     $.get(url).then((data) => {
       app.Question.loadAll(data.results);
       app.stat.timeInit();
@@ -98,31 +100,20 @@ var app = app || {};
   }
 
   Sensei.evaluateAnswer = function () {
-    // console.log('eval ans', app.Question.all[0]);
-    $('.option').each(function(){
-      // console.log('eval', $(this).html())
+    $('.option').each(function () {
       let optionText = $(this).html();
       let correctAns = htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer);
-      // debugger;
       if (optionText === correctAns) {
         $(this).css('background-color', 'green');
-        // console.log('highlight', $(this));
       }
     })
-  console.log(app.Question.selectedAnswer + ' === ' + htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer))
 
     if (app.Question.selectedAnswer === htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer)) {
-       console.log('Answer is Correct');
-      app.stat.numberOfCorrect +=1;
+      app.stat.numberOfCorrect += 1;
       let timeTaken = app.stat.time - app.stat.questionStartTime;
-      console.log(app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken));
-
-    } else {
-      // console.log("Answer is Wrong");
+      app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken);
     }
-    app.statView.updateStats();
   }
-
 
   module.Sensei = Sensei;
 })(app);

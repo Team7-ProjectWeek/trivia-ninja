@@ -6,7 +6,6 @@ var app = app || {};
   const freePlayController = {};
 
   freePlayController.freeQuestions = (ctx, next) => {
-    $('ul li').hide();
     $('#about').hide();
     // show free play button
     if (app.Sensei.paramsValidator(ctx.params.numOfQuestions,'any')){
@@ -18,18 +17,16 @@ var app = app || {};
         app.Question.loadAll(data.results);
         app.stat.timeInit();
         app.QuestionView.serveQuestion();
-      });
-    }
-
+        $('.stats-timer').hide();
+        $('.stats-score').hide();
+        $('.stats-progress').html('Question: 0/Infinity')
+    });
   }
 
   freePlayController.continueFreeQuestions = (ctx, next) => {
-    $('ul li').hide();
-    // show free play button
     let url = `https://opentdb.com/api.php?amount=50&token=${app.user.token.token}`
     console.log(url);
     app.Question.currentQuestionIndex = 0;
-    app.Question.isFreePlay =true;
     $.get(url).then((data) => {
       app.Question.loadAll(data.results);
       app.QuestionView.serveQuestion();
