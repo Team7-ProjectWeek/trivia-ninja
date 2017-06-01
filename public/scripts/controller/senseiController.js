@@ -81,8 +81,9 @@ var app = app || {};
     });
   }
 
-  Sensei.evaluateAnswer = () => {
-    console.log(app.Question.selectedAnswer + ' === ' +  htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer))
+  Sensei.evaluateAnswer = function () {
+    // console.log('eval ans', app.Question.all[0]);
+    // console.log(app.Question.selectedAnswer + ' === ' + htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer))
     $('.option').each(function(){
       // console.log('eval', $(this).html())
       let optionText = $(this).html();

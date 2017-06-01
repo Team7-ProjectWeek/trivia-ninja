@@ -6,8 +6,7 @@ const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;
  // 'postgres://localhost:5432'
-
-const conString = process.env.DATABASE_URL || 'postgres://postgres:passwordhere@localhost:5432/kilovolt'; 
+const conString = process.env.DATABASE_URL || 'postgres://postgres:passwordhere@localhost:5432/kilovolt';
 
 const app = express();
 const client = new pg.Client(conString);
@@ -28,6 +27,7 @@ app.get('/topScores', function(request,response){
 
 app.post('/logScore', function(request, response) {
   console.log(request.body);
+
   client.query(`INSERT INTO
                 scores(initials, game_id, total_score, total_time)
                 VALUES ($1,$2,$3,$4);`,
@@ -48,6 +48,7 @@ app.get('*', (req, res) => {
 app.listen(PORT, function() {
   console.log(`You are running on PORT ${PORT}`)
 });
+
 
 
 

@@ -28,7 +28,8 @@ var app = app || {};
           app.stat.stopTime();
           window.setTimeout(function(){
             app.stat.timeInit();
-            app.QuestionView.serveQuestion()}, 900);
+            app.QuestionView.serveQuestion()}, 750);
+
 
         } else {
           app.Sensei.evaluateAnswer();
@@ -48,6 +49,7 @@ var app = app || {};
         console.log('in changing done');
         app.Sensei.evaluateAnswer();
         app.freePlayController.continueFreeQuestions();
+
           // also ideally this would have a done button, where you can tally your points
       }
     });
