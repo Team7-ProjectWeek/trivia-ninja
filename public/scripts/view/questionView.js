@@ -27,7 +27,7 @@ var app = app || {};
           app.stat.stopTime();
           window.setTimeout(function(){
             app.stat.timeInit();
-            app.QuestionView.serveQuestion()}, 3000);
+            app.QuestionView.serveQuestion()}, 500);
 
         } else {
           app.Sensei.evaluateAnswer();
@@ -59,7 +59,7 @@ var app = app || {};
     $('.option').on('click', function (event) {
       $(this).siblings().removeClass('question-selected');
       $(this).toggleClass('question-selected');
-      // app.Question.selectedAnswer = $(this).text();
+       
     })
   }
 
