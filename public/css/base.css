@@ -37,8 +37,13 @@ label {
     50%{background-position:67% 100%}
     100%{background-position:34% 0%}
 }
-@keyframes AnimationName { 
+@keyframes AnimationName {
     0%{background-position:34% 0%}
     50%{background-position:67% 100%}
     100%{background-position:34% 0%}
+}
+
+@font-face {
+  font-family: lastninja;
+  src: url('/fonts/lastninja.ttf');
 }
