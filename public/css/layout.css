@@ -1,5 +1,5 @@
 
-@media only screen and (min-width: 420px) {
+@media only screen and (min-width: 510px) {
   /*page break for tablets*/
 
   .nicu-pic{
@@ -13,12 +13,24 @@
   .dev-pic{
     float: left;
   }
+  
+  .ham-menu{
+    display: none;
+  }
 
+  .main-nav ul li {
+    display: inline;
+  }
+  .main-header{
+    font-size:8vw;
+  }
+
+  
 }
 
 @media only screen and (min-width: 768px) {
   /*page break for desktops*/
-    .option {
+  .option {
     width: 40%;
   }
 }
