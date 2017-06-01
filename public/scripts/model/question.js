@@ -37,7 +37,7 @@ var app = app || {};
   Question.all = [];
   Question.currentQuestionIndex = 0;
   Question.isFreePlay = false;
-  Question.selectedAnswer = "none selected";
+  Question.selectedAnswer = "";
 
   Question.loadAll = (rawQuestions) => {
     Question.all = rawQuestions.map(ele => new Question(ele));

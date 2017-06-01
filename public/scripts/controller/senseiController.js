@@ -113,6 +113,7 @@ var app = app || {};
       let timeTaken = app.stat.time - app.stat.questionStartTime;
       app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken);
     }
+    app.Question.selectedAnswer = '';
   }
 
   module.Sensei = Sensei;
