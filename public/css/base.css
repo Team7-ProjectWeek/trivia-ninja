@@ -3,10 +3,16 @@
 }
 
 body{
-  height: 100%;
+  height: 100vh;
   width: auto;
+  color: white;
   font-family: 'Raleway', sans-serif;
-  background: radial-gradient(circle,green, yellow);
+  background: linear-gradient(14deg, #185091, #be0000);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 7s ease infinite;
+  -moz-animation: AnimationName 7s ease infinite;
+  animation: AnimationName 7s ease infinite;
 }
 
 label {
@@ -19,4 +25,20 @@ label {
 
 .decoder {
   display: none;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:34% 0%}
+    50%{background-position:67% 100%}
+    100%{background-position:34% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:34% 0%}
+    50%{background-position:67% 100%}
+    100%{background-position:34% 0%}
+}
+@keyframes AnimationName { 
+    0%{background-position:34% 0%}
+    50%{background-position:67% 100%}
+    100%{background-position:34% 0%}
 }
