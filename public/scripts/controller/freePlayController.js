@@ -9,15 +9,18 @@ var app = app || {};
     $('ul li').hide();
     $('#about').hide();
     // show free play button
-    let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
-    console.log(url);
-    app.Question.currentQuestionIndex = 0;
-    app.Question.isFreePlay =true;
-    $.get(url).then((data) => {
-      app.Question.loadAll(data.results);
-      app.stat.timeInit();
-      app.QuestionView.serveQuestion();
-    });
+    if (app.Sensei.paramsValidator(ctx.params.numOfQuestions,'any')){
+      let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
+      console.log(url);
+      app.Question.currentQuestionIndex = 0;
+      app.Question.isFreePlay =true;
+      $.get(url).then((data) => {
+        app.Question.loadAll(data.results);
+        app.stat.timeInit();
+        app.QuestionView.serveQuestion();
+      });
+    }
+
   }
 
   freePlayController.continueFreeQuestions = (ctx, next) => {

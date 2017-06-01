@@ -8,8 +8,10 @@ var app = app || {};
     return $('.decoder').html(value).text();
   }
 
-  function paramsValidator (numOfQuestions, difficulty) {
-    if (difficulty === 'easy' || difficulty === 'medium' || difficulty === 'hard') {
+  const Sensei = {};
+
+  Sensei.paramsValidator = function (numOfQuestions, difficulty) {
+    if (difficulty === 'easy' || difficulty === 'medium' || difficulty === 'hard' || difficulty === 'any') {
       if (numOfQuestions <= 50 && numOfQuestions > 0) {
         return true;
       }
@@ -18,7 +20,6 @@ var app = app || {};
     }
   }
 
-  const Sensei = {};
 
   Sensei.hasValidToken = (ctx, next) => {
     if (!app.user.token || app.user.token.expirationTime <= Math.floor((new Date()).getTime() / 1000)) {
@@ -70,7 +71,7 @@ var app = app || {};
 
   Sensei.getQuestions = (ctx, next) => {
     $('ul li').hide();
-    if (paramsValidator(ctx.params.numOfQuestions, ctx.params.difficulty)){
+    if (app.Sensei.paramsValidator(ctx.params.numOfQuestions, ctx.params.difficulty)){
       let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
       console.log(url);
       app.Question.isFreePlay = false;
@@ -80,8 +81,6 @@ var app = app || {};
         app.stat.timeInit();
         app.QuestionView.serveQuestion();
       });
-    }else {
-      alert('INVALID FUCKN ROUTE');
     }
 
   }
