@@ -15,8 +15,6 @@ var app = app || {};
     app.statView.updateStats();
     $('#questionModal').append(app.Question.all[app.Question.currentQuestionIndex].toHtml());
 
-    console.log(app.Question.currentQuestionIndex)
-
     $('.question-button').on('click', function () {
       if ($('.question-button').text() === 'DONE') {
         app.statsController.completeGame();

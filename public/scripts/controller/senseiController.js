@@ -12,11 +12,9 @@ var app = app || {};
   Sensei.hasValidToken = (ctx, next) => {
     if (localStorage.apiToken) {
       app.user.token = JSON.parse(localStorage.apiToken);
-      console.log('Has local token');
     }
 
     if (!app.user.token || app.user.token.expirationTime <= Math.floor((new Date()).getTime() / 1000)) {
-      console.log('Getting token now');
       app.Sensei.tokenRequest(next);
     } else {
       next();
