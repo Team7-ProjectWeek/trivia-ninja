@@ -21,16 +21,13 @@ var app = app || {};
       if ($('.question-button').text() === 'DONE') {
         app.statsController.completeGame();
       } else {
-        // console.log('if', app.Question.all[0]);
         if (app.Question.currentQuestionIndex < app.Question.all.length - 2) {
           app.Sensei.evaluateAnswer();
           app.Question.currentQuestionIndex += 1;
           app.stat.stopTime();
           window.setTimeout(function(){
             app.stat.timeInit();
-            app.QuestionView.serveQuestion()}, 750);
-
-
+            app.QuestionView.serveQuestion()}, 650);
         } else {
           app.Sensei.evaluateAnswer();
           app.Question.currentQuestionIndex += 1;
@@ -49,15 +46,13 @@ var app = app || {};
         console.log('in changing done');
         app.Sensei.evaluateAnswer();
         app.freePlayController.continueFreeQuestions();
-
-          // also ideally this would have a done button, where you can tally your points
       }
     });
 
     $('.option').on('click', function (event) {
       $(this).siblings().removeClass('question-selected');
       $(this).toggleClass('question-selected');
-      // app.Question.selectedAnswer = $(this).text();
+      app.Question.selectedAnswer = $(this).text();
     })
   }
 
