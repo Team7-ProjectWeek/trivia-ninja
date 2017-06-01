@@ -41,6 +41,10 @@ app.post('/logScore', function(request, response) {
         .catch(console.error);
 });
 
+app.get('/game/*/*', (req, res) => {
+  res.sendFile('index.html', {root: './public'})
+});
+
 app.get('*', (req, res) => {
   res.sendFile('index.html', {root: './public'})
 });

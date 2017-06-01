@@ -8,6 +8,16 @@ var app = app || {};
     return $('.decoder').html(value).text();
   }
 
+  function paramsValidator (numOfQuestions, difficulty) {
+    if (difficulty === 'easy' || difficulty === 'medium' || difficulty === 'hard') {
+      if (numOfQuestions <= 50 && numOfQuestions > 0) {
+        return true;
+      }
+    } else {
+      return false;
+    }
+  }
+
   const Sensei = {};
 
   Sensei.hasValidToken = (ctx, next) => {
@@ -60,15 +70,20 @@ var app = app || {};
 
   Sensei.getQuestions = (ctx, next) => {
     $('ul li').hide();
-    let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
-    console.log(url);
-    app.Question.isFreePlay = false;
-    app.Question.currentQuestionIndex = 0;
-    $.get(url).then((data) => {
-      app.Question.loadAll(data.results);
-      app.stat.timeInit();
-      app.QuestionView.serveQuestion();
-    });
+    if (paramsValidator(ctx.params.numOfQuestions, ctx.params.difficulty)){
+      let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
+      console.log(url);
+      app.Question.isFreePlay = false;
+      app.Question.currentQuestionIndex = 0;
+      $.get(url).then((data) => {
+        app.Question.loadAll(data.results);
+        app.stat.timeInit();
+        app.QuestionView.serveQuestion();
+      });
+    }else {
+      alert('INVALID FUCKN ROUTE');
+    }
+
   }
 
   Sensei.freeQuestions = (ctx, next) => {
