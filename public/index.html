@@ -35,9 +35,12 @@
           <div class="option">{{{option2}}}</div>
           {{/if}}
         </div>
-        <div class="quit"><a href="/">Quit</a></div>
-        <div class="free">FREE</div>
+        {{#if isFreePlay}}
+        <div class="quit-button"><a href="/">Quit</a></div>
+        <div class="free-button">FREE</div>
+        {{else}}
         <div class="question-button">NEXT</div>
+        {{/if}}
       </div>
     </script>
     <script id="leaderBoardScoreTemplate" type="text/x-handlebars-template">

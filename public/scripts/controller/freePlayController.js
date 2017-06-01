@@ -12,6 +12,7 @@ var app = app || {};
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
     console.log(url);
     app.Question.currentQuestionIndex = 0;
+    app.Question.isFreePlay =true;
     $.get(url).then((data) => {
       app.Question.loadAll(data.results);
       app.stat.timeInit();
@@ -25,6 +26,7 @@ var app = app || {};
     let url = `https://opentdb.com/api.php?amount=50&token=${app.user.token.token}`
     console.log(url);
     app.Question.currentQuestionIndex = 0;
+    app.Question.isFreePlay =true;
     $.get(url).then((data) => {
       app.Question.loadAll(data.results);
       app.QuestionView.serveQuestion();

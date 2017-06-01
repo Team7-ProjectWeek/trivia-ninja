@@ -37,7 +37,7 @@ var app = app || {};
       }
     });
 
-    $('.free').on('click', function () {
+    $('.free-button').on('click', function () {
       if (app.Question.currentQuestionIndex < app.Question.all.length - 1) {
         app.Sensei.evaluateAnswer();
         app.Question.currentQuestionIndex += 1;
