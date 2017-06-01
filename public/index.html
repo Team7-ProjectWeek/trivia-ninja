@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
   <link rel="stylesheet" href="/css/normalize.css" />
   <link rel="stylesheet" href="/css/base.css" />
   <link rel="stylesheet" href="/css/module.css" />
@@ -12,9 +13,9 @@
 </head>
 <body>
   <header>
-    <h1><a href="/">Trivia Ninja!</a></h1>
     <nav class="main-nav">
-      <div class="ham-menu"></div>
+      <!--<div class="ham-menu"></div>-->
+      <div class="brand-name">Trivia Ninja!</div>
       <ul>
         <li><a href="/game/5">Free Play</a></li>
         <li><a href="/about">About Team 7</a></li>
@@ -46,6 +47,7 @@
         <div class="final-time">TIME: {{total_time}}</div>
       </div>
     </script>
+
   </header>
   <main id="gameBox" class="game-box">
     <h1 class="main-header"> Ready to Train? </h1>
@@ -64,7 +66,7 @@
           <option>medium</option>
           <option>hard</option>
         </select>
-        <button id="playButton" class="play-button"> Play Now! </button>
+        <button id="playButton" class="play-button"> PLAY NOW! </button>
       </form>
     <div id="questionModal">
       <div class="stats-container">

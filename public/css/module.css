@@ -2,40 +2,81 @@
 .game-box {
 }
 
+.brand-name{
+  font-family: 'Barrio', cursive;
+  font-size: 2.7em;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 1%;
+  padding: 2.5px;
+  color:black;
+  background-color: white;
+  width: 20%;
+  display: inline;
+}
+
+.main-nav{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.main-nav ul li {
+    display: inline;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+}
+
+.main-nav ul li a{
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: grey;
+  padding: 15px;
+  border-radius: 5px;
+  
+}
+
+
 .main-header{
   text-align: center;
+  font-size: 3em;
 }
 .game-form {
   text-align: center;
-  width:550px;
-  height: 200px;
-  background-color: gray;
+  margin: auto;
+  width: 80%;
+  height: 50vh;
+  background-color: rgba(116, 150, 205, 0.22);
   color: white;
-  margin-left: 31.2%;
+  border-radius: 10px;
 }
 
-.num-question {
-  background-color: blue;
-  color: white;
+.game-form {
+  font-size: 1.5em;
+}
+
+
+.game-form select {
+  color: black;
   margin-top: 15px;
-
-}
-
-.select-difficulty {
-  background-color: red;
-  color: white;
-
+  text-transform: uppercase;
 }
 
 .play-button {
-  background-color: green;
-  color: white;
-  border-radius: 35%;
-  height: 40%;
-  width: 40%;
+  background-color: white;
+  color: black;
+  height: 30%;
+  width: 30%;
+  font-size: 3rem;
+  font-weight: 800;
+  border-radius: 10px;
   display: block;
-  margin-left: 30%;
-  margin-top: 50px;
+  margin: auto;
+  margin-top: 7%;
 }
 
 /*Question Region*/
