@@ -2,7 +2,6 @@
 
 $(document).ready(function () {
   $('.save-score-button').on('click', function(){
-    console.log("Sending score to DB");
     $.post('/logScore', {
       initials: $('#initials')[0].value || "MDN",
       gameId: 'single',
@@ -13,6 +12,6 @@ $(document).ready(function () {
         $(this).hide();
         app.statsController.populateTopScores();
     }, () => $('.final-header').text('Failed to save your score try again!'))
-   
+
   });
 })

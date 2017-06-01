@@ -8,8 +8,7 @@ var app = app || {};
   aboutController.init = function () {
     $('.main-header').hide();
     $('#mainGame').hide();
-
-    $('#about').fadeIn(4500);
+    $('#about').fadeIn(800);
   }
 
   module.aboutController = aboutController;

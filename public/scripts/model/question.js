@@ -17,7 +17,6 @@ var app = app || {};
     let answers = [this.correct_answer];
     this.incorrect_answers.forEach(e => answers.push(e));
     this.isFreePlay = app.Question.isFreePlay;
-    console.log(this.isFreePlay);
     if (this.type === 'multiple') {
       this.isMultiple = true;
       this.option1 = answerRandomizer(answers)[0];
@@ -29,8 +28,6 @@ var app = app || {};
       this.option1 = answerRandomizer(answers)[0];
       this.option2 = answerRandomizer(answers)[0];
     }
-
-    console.log(this);
     return template(this)
   };
 
