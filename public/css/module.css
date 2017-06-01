@@ -2,18 +2,7 @@
 .game-box {
 }
 
-.brand-name{
-  font-family: 'Barrio', cursive;
-  font-size: 2.7em;
-  font-weight: 900;
-  text-align: center;
-  margin-top: 1%;
-  padding: 2.5px;
-  color:black;
-  background-color: white;
-  width: 20%;
-  display: inline;
-}
+
 
 .brand-name a{
   text-decoration: none;
@@ -21,17 +10,15 @@
 }
 
 .main-nav{
-  display: flex;
+  display: block;
   width: 100%;
+  background-color: black;
   align-items: center;
   justify-content: space-around;
 }
 
 .main-nav ul li {
-    display: inline;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 1%;
+    display: none;
 }
 
 .main-nav ul li a{
@@ -40,15 +27,29 @@
   font-weight: 600;
   text-decoration: none;
   background-color: grey;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
 
 }
 
+.brand-name{
+  font-family: 'Barrio', cursive;
+  font-size: 5vw;
+  font-weight: 900;
+  text-align: center;
+  color:black;
+  display: inline;
+}
+
+.ham-menu i{
+    font-size: 2rem;
+    animation: spin 5s infinite;
+}
+/*Hero Region*/
 
 .main-header{
   text-align: center;
-  font-size: 3em;
+  font-size: 15vw;
 }
 .game-form {
   text-align: center;
@@ -64,9 +65,13 @@
   font-size: 1.5em;
 }
 
+.game-form label{
+  font-size: 4vw;
+}
 
 .game-form select {
   color: black;
+  font-size: 4vw;
   margin-top: 15px;
   text-transform: uppercase;
 }
@@ -75,8 +80,8 @@
   background-color: white;
   color: black;
   height: 30%;
-  width: 30%;
-  font-size: 3rem;
+  width: 60vw;
+  font-size: 10vw;
   font-weight: 800;
   border-radius: 10px;
   display: block;
@@ -237,4 +242,18 @@
   background-color: pink;
   font-size: 2em;
   font-weight: 700;
+}
+
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
 }

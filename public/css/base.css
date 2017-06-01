@@ -10,9 +10,10 @@ body{
   background: linear-gradient(14deg, #185091, #be0000);
   background-size: 800% 800%;
 
-  -webkit-animation: AnimationName 7s ease infinite;
-  -moz-animation: AnimationName 7s ease infinite;
-  animation: AnimationName 7s ease infinite;
+  -webkit-animation: AnimationName 17s ease infinite;
+  -moz-animation: AnimationName 17s ease infinite;
+  animation: AnimationName 17s ease infinite;
+  
 }
 
 label {
