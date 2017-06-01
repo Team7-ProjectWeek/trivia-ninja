@@ -14,6 +14,8 @@ var app = app || {};
   }
 
   statsController.populateTopScores = function(){
+    $('.leaderboard-div').children().fadeOut();
+    $('.leaderboard-div').children().remove();
     $.get('/topScores').then(
       (result) => {
         result.forEach((row) =>{

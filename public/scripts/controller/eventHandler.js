@@ -11,6 +11,7 @@ $(document).ready(function () {
     }).then(() => {
         $('.final-header').text('Your score has been saved!');
         $(this).hide();
+        app.statsController.populateTopScores();
     }, () => $('.final-header').text('Failed to save your score try again!'))
    
   });
