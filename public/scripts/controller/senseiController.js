@@ -82,7 +82,6 @@ var app = app || {};
 
   Sensei.evaluateAnswer = function () {
     // console.log('eval ans', app.Question.all[0]);
-    // console.log(app.Question.selectedAnswer + ' === ' + htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer))
     $('.option').each(function(){
       // console.log('eval', $(this).html())
       let optionText = $(this).html();
@@ -93,9 +92,10 @@ var app = app || {};
         // console.log('highlight', $(this));
       }
     })
+  console.log(app.Question.selectedAnswer + ' === ' + htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer))
 
     if (app.Question.selectedAnswer === htmlDecoder(app.Question.all[app.Question.currentQuestionIndex].correct_answer)) {
-      // console.log('Answer is Correct');
+       console.log('Answer is Correct');
       app.stat.numberOfCorrect +=1;
       let timeTaken = app.stat.time - app.stat.questionStartTime;
       console.log(app.stat.statCalculator(app.Question.all[app.Question.currentQuestionIndex].difficulty, timeTaken));
