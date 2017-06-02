@@ -202,6 +202,8 @@
   display: inline-block;
   max-width: 75%;
   margin: 0 2%;
+  background-color: #404040;
+  padding: 1.2em 1.2em;
 }
 
 .bio{
@@ -218,6 +220,9 @@
   display: inline-block;
   padding: 1em 1em;
   text-align: center;
+  background-color: #404040;
+  color: white;
+  text-decoration: none;
 }
 
 /*Trivia Complete Region*/
