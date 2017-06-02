@@ -32,8 +32,9 @@ var app = app || {};
             } else {
               app.Sensei.evaluateAnswer();
               app.Question.currentQuestionIndex += 1;
-              app.QuestionView.serveQuestion();
-              $('.question-button').html('DONE');
+              window.setTimeout(function(){
+                app.QuestionView.serveQuestion();
+                $('.question-button').html('DONE')}, 650);
             }
           }
         }
