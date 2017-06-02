@@ -31,6 +31,11 @@ label {
   display: none;
 }
 
+a, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
 @-webkit-keyframes AnimationName {
     0%{background-position:34% 0%}
     50%{background-position:67% 100%}
