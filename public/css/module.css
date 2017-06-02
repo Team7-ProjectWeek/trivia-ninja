@@ -12,7 +12,7 @@
 
 .main-nav ul{
   display: none;
-  width: 70%;
+  width: 60%;
   justify-content: flex-end;
   text-decoration: none;
   list-style: none;
@@ -38,9 +38,12 @@
   text-decoration: none;
 }
 
+.brand-name{
+  width: 30%;
+}
 .brand-name a{
   font-family: CFSamuraiBob, cursive;
-  font-size: 4em;
+  font-size: 3.5em;
   text-align: center;
   color:white;
   margin-left: 5%;
@@ -66,7 +69,7 @@
   margin: auto;
   width: 80%;
   height: 50vh;
-  background-color: rgba(116, 150, 205, 0.22);
+  background-color: rgba(35, 35, 35, 0.50);
   color: white;
   border-radius: 10px;
 }
@@ -100,33 +103,40 @@
 }
 
 /*Question Region*/
-
 .question-container {
   width: 80%;
-  height: 90%;
+  height: 100%;
   margin: auto;
-  background: grey;
+  background: rgba(35, 35, 35, 0.50);
   color:white;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .question-header {
   text-align: center;
   font-size: 1.5em;
   padding: 4px;
+  padding-top:8vh;
 }
 
 .option-container{
   display:flex;
+  margin-top:10vh;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
 .option{
-  width: 60%;
+  width: 40%;
   margin-top: 3%;
   text-align:center;
-  background-color: blue;
+  background-color: #731E24;
   padding: 5px;
+  font-size:1.3em;
+  padding-top:10px;
+  padding-bottom:10px;
+  margin-top:5vh;
+  margin-bottom: 5vh;
   border-radius: 5px;
 }
 
@@ -170,9 +180,10 @@
   font-family: 'Raleway', sans-serif;
   display: none;
   text-align: center;
-  background-color: pink;
+  background-color: #731E24;
   margin:auto;
   width: 80%;
+  margin-top: 10vh;
   font-size: 1.3em;
   font-weight: 600;
 }
@@ -184,7 +195,6 @@
 .question-selected {
   background-color: pink;
 }
-
 
 /*About Team 7 Region*/
 

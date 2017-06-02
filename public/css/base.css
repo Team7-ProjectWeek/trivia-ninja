@@ -10,9 +10,9 @@ body{
   background: url(/images/forest.jpg);
   /*background: linear-gradient(14deg, #185091, #be0000);*/
 
-  -webkit-animation: AnimationName 17s ease infinite;
-  -moz-animation: AnimationName 17s ease infinite;
-  animation: AnimationName 17s ease infinite;
+  -webkit-animation: AnimationName 25s ease infinite;
+  -moz-animation: AnimationName 25s ease infinite;
+  animation: AnimationName 25s ease infinite;
 
 }
 
