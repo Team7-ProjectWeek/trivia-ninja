@@ -7,17 +7,34 @@
   width: 100%;
   background-color: black;
   align-items: center;
+  justify-content: space-around;
 }
 
 .main-nav ul{
-  display: inline;
-  float: right;
+  display: none;
+  width: 70%;
+  justify-content: flex-end;
+  text-decoration: none;
+  list-style: none;
 }
+
+.main-nav ul li {
+  padding: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.main-nav ul li:hover {
+  color:black;
+  background-color: #731E24;
+  border-radius: 10px;
+}
+
 
 .menu-item a{
   color: white;
-  font-size: 1.2em;
-  font-weight: 500;
+  font-size: 1.6em;
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -29,7 +46,6 @@
   margin-left: 5%;
   text-decoration: none;
   display: inline;
-  border: solid yellow;
 }
 
 
