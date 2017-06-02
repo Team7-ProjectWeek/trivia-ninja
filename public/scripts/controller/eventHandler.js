@@ -12,6 +12,10 @@ $(document).ready(function () {
         $(this).hide();
         app.statsController.populateTopScores();
     }, () => $('.final-header').text('Failed to save your score try again!'))
-
+  
+  
   });
+  $('.ham-menu').on('click', function(){
+    $('.mobile-menu').toggleClass('mobile-menu-shown');
+  })
 })
