@@ -19,7 +19,6 @@ var app = app || {};
     }
   }
 
-
   Sensei.hasValidToken = (ctx, next) => {
     if (localStorage.apiToken) {
       app.user.token = JSON.parse(localStorage.apiToken);
@@ -70,7 +69,7 @@ var app = app || {};
   })
 
   Sensei.getQuestions = (ctx, next) => {
-    if (app.Sensei.paramsValidator(ctx.params.numOfQuestions, ctx.params.difficulty)){
+    if (app.Sensei.paramsValidator(ctx.params.numOfQuestions, ctx.params.difficulty)) {
       let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
       app.Question.isFreePlay = false;
       app.Question.currentQuestionIndex = 0;

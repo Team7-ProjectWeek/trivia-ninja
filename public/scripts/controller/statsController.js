@@ -7,17 +7,17 @@ var app = app || {};
 
   // get number of questions and answers.
 
-  statsController.completeGame = function(){
+  statsController.completeGame = function () {
     app.stat.stopTime();
     app.statView.complete();
   }
 
-  statsController.populateTopScores = function(){
+  statsController.populateTopScores = function () {
     $('.leaderboard-div').children().fadeOut();
     $('.leaderboard-div').children().remove();
     $.get('/topScores').then(
       (result) => {
-        result.forEach((row) =>{
+        result.forEach((row) => {
           $('.leaderboard-div').append(app.stat.scoreToHtml(row));
         })
       })
