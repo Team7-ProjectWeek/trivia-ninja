@@ -7,8 +7,8 @@ body{
   width: auto;
   color: white;
   font-family: 'Raleway', sans-serif;
-  background: linear-gradient(14deg, #185091, #be0000);
-  background-size: 800% 800%;
+  background: url(/images/forest.jpg);
+  /*background: linear-gradient(14deg, #185091, #be0000);*/
 
   -webkit-animation: AnimationName 17s ease infinite;
   -moz-animation: AnimationName 17s ease infinite;
