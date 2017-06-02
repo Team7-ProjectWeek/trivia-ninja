@@ -1,6 +1,4 @@
 /*Homepage Region*/
-.game-box {
-}
 
 .main-nav{
   display: flex;
@@ -11,7 +9,7 @@
 }
 
 .main-nav ul{
-  display: flex;
+  display: none;
   width: 60%;
   justify-content: flex-end;
   text-decoration: none;
@@ -39,7 +37,7 @@
 }
 
 .brand-name{
-  width: 30%;
+  width: 70%;
 }
 .brand-name a{
   font-family: CFSamuraiBob, cursive;
@@ -62,13 +60,18 @@
 
 .main-header{
   text-align: center;
-  font-size: 5vw;
+  font-size: 10vw;
+  width: 90%;
+  background: white;
+  margin: auto;
+  margin-top: 5vh;
+  color: black;
 }
 .game-form {
   text-align: center;
   margin: auto;
   width: 80%;
-  height: 50vh;
+  height: 65%;
   background-color: rgba(35, 35, 35, 0.50);
   color: white;
   border-radius: 10px;
@@ -79,27 +82,29 @@
 }
 
 .game-form label{
-  font-size: 2vw;
+  display: block;
+  font-size: 6vw;
 }
 
 .game-form select {
   color: black;
-  font-size: 2vw;
+  font-size: 6vw;
   margin-top: 15px;
   text-transform: uppercase;
 }
 
 .play-button {
-  background-color: white;
-  color: black;
-  height: 30%;
-  width: 60vw;
-  font-size: 5vw;
+  background-color: #731E24;
+  color: white;
+  height: 20%;
+  width: 50vw;
+  font-size: 8vw;
   font-weight: 800;
   border-radius: 10px;
   display: block;
   margin: auto;
   margin-top: 10vh;
+  margin-bottom: 2.5vh;
 }
 
 /*Question Region*/
@@ -127,27 +132,28 @@
 }
 
 .option{
-  width: 40%;
+  width: 60%;
   margin-top: 3%;
   text-align:center;
   background-color: #731E24;
   padding: 5px;
   font-size:1.3em;
-  padding-top:10px;
-  padding-bottom:10px;
-  margin-top:5vh;
-  margin-bottom: 5vh;
+  padding-top:20px;
+  padding-bottom:20px;
+  margin-top:2vh;
+  margin-bottom: 2vh;
   border-radius: 5px;
 }
 
 .question-button{
-  background-color: red ;
+  background-color: #27ae60;
   color: #fff;
-  width: 20%;
+  width: 30%;
+  font-size: 2em;
   text-align: center;
   margin-top: 3%;
   margin-bottom: 2%;
-  margin-left: 70%;
+  margin-left: 60%;
   padding: 5px;
   border-radius: 5px;
 }
@@ -155,11 +161,11 @@
 .free-button{
   background-color: red ;
   color: #fff;
-  width: 20%;
+  width: 30%;
   text-align: center;
   margin-top: 3%;
   margin-bottom: 2%;
-  margin-left: 70%;
+  margin-left: 60%;
   padding: 5px;
   border-radius: 5px;
 }
@@ -176,20 +182,25 @@
   padding: 5px;
   border-radius: 5px;
 }
+
 .stats-container {
   font-family: 'Raleway', sans-serif;
   display: none;
+  flex-wrap: wrap;
   text-align: center;
+  justify-content: center;
   background-color: #731E24;
   margin:auto;
   width: 80%;
-  margin-top: 10vh;
+  margin-top: 3vh;
   font-size: 1.3em;
   font-weight: 600;
 }
 
 .stats-container div{
-  width:25%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width:45%;
 }
 
 .question-selected {
