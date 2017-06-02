@@ -2,40 +2,26 @@
 @media only screen and (min-width: 510px) {
   /*page break for tablets*/
 
-  .nicu-pic{
+  .float-left{
     float: left;
   }
 
-  .mport-pic {
+  .float-right {
     float: right;
   }
 
-  .dev-pic{
-    float: left;
-  }
-  
   .ham-menu{
     display: none;
   }
 
-.main-nav ul{
-  display: flex;
-}
+  .main-nav ul li {
+    display: inline;
+  }
   .main-header{
-    font-size:5vw;
+    font-size:8vw;
   }
 
-  .game-form label{
-    font-size: 2vw;
-  }
-  .game-form select{
-    font-size: 2vw;
-  }
-  .play-button{
-    font-size: 5vw;
-  }
 
-  
 }
 
 @media only screen and (min-width: 768px) {
