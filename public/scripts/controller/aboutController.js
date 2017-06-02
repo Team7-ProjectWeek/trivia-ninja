@@ -11,7 +11,6 @@ var app = app || {};
     $('#questionModal').hide();
     $('.trivia-complete-container').hide();
     $('#about').fadeIn(800);
-
   }
 
   module.aboutController = aboutController;

@@ -8,5 +8,4 @@ page('/game/:numOfQuestions', app.Sensei.hasValidToken, app.freePlayController.f
 
 page('/about', app.aboutController.init);
 
-
 page();
