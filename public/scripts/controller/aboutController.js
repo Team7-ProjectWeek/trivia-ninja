@@ -8,8 +8,9 @@ var app = app || {};
   aboutController.init = function () {
     $('.main-header').hide();
     $('#mainGame').hide();
-    $('#about').fadeIn(800);
     $('#questionModal').hide();
+    $('.trivia-complete-container').hide();
+    $('#about').fadeIn(800);
 
   }
 

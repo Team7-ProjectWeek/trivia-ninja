@@ -22,7 +22,17 @@
     display: inline;
   }
   .main-header{
-    font-size:8vw;
+    font-size:5vw;
+  }
+
+  .game-form label{
+    font-size: 2vw;
+  }
+  .game-form select{
+    font-size: 2vw;
+  }
+  .play-button{
+    font-size: 5vw;
   }
 
   
