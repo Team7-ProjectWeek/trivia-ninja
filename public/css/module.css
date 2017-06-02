@@ -2,48 +2,42 @@
 .game-box {
 }
 
-
-
-.brand-name a{
-  text-decoration: none;
-  color: black;
-}
-
 .main-nav{
-  display: block;
+  display: flex;
   width: 100%;
   background-color: black;
   align-items: center;
-  justify-content: space-around;
 }
 
-.main-nav ul li {
-    display: none;
+.main-nav ul{
+  display: inline;
+  float: right;
 }
 
-.main-nav ul li a{
+.menu-item a{
   color: white;
   font-size: 1.2em;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
-  background-color: grey;
-  padding: 10px;
-  border-radius: 5px;
-
 }
 
-.brand-name{
-  font-family: 'Barrio', cursive;
-  font-size: 5vw;
-  font-weight: 900;
+.brand-name a{
+  font-family: CFSamuraiBob, cursive;
+  font-size: 4em;
   text-align: center;
-  color:black;
+  color:white;
+  margin-left: 5%;
+  text-decoration: none;
   display: inline;
+  border: solid yellow;
 }
+
 
 .ham-menu i{
     font-size: 2rem;
-    animation: spin 5s infinite;
+    margin: 2.5%;
+    margin: 2.5%;
+    animation: spin 3s infinite;
 }
 /*Hero Region*/
 
@@ -86,7 +80,7 @@
   border-radius: 10px;
   display: block;
   margin: auto;
-  margin-top: 7%;
+  margin-top: 10vh;
 }
 
 /*Question Region*/
