@@ -9,9 +9,9 @@ body{
   font-family: 'Raleway', sans-serif;
   background: url(/images/forest.jpg);
   /*background: linear-gradient(14deg, #185091, #be0000);*/
-  -webkit-animation: AnimationName 25s ease infinite;
-  -moz-animation: AnimationName 25s ease infinite;
-  animation: AnimationName 25s ease infinite;
+  -webkit-animation: MovingBackground 35s ease infinite;
+  -moz-animation: MovingBackground 35s ease infinite;
+  animation: MovingBackground 35s ease infinite;
 
 }
 
@@ -35,20 +35,20 @@ a, a:visited {
   color: white;
 }
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:34% 0%}
-    50%{background-position:67% 100%}
-    100%{background-position:34% 0%}
+@-webkit-keyframes MovingBackground {
+    0%{background-position:0% 0%}
+    50%{background-position:35% 100%}
+    100%{background-position:0% 0%}
 }
-@-moz-keyframes AnimationName {
-    0%{background-position:34% 0%}
-    50%{background-position:67% 100%}
-    100%{background-position:34% 0%}
+@-moz-keyframes MovingBackground {
+    0%{background-position:00% 0%}
+    50%{background-position:35% 100%}
+    100%{background-position:00% 0%}
 }
-@keyframes AnimationName {
-    0%{background-position:15% 0%}
-    50%{background-position:50% 100%}
-    100%{background-position:34% 0%}
+@keyframes MovingBackground {
+    0%{background-position:00% 0%}
+    50%{background-position:100% 0%}
+    100%{background-position:00% 0%}
 }
 
 @font-face {

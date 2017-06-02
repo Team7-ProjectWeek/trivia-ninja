@@ -233,6 +233,17 @@
 
 /*About Team 7 Region*/
 
+.about-header{
+  background: white;
+  color:black;
+  text-align: center;
+  font-size: 3vw;
+  margin: auto;
+  font-weight: 600;
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+  width:20%;
+}
 .about-team {
   align-items: center;
 }
@@ -247,7 +258,8 @@
   display: inline-block;
   max-width: 75%;
   margin: 0 2%;
-  background-color: #404040;
+  background-color: rgba(35, 35, 35, 0.80);
+  border-radius: 10px;
   padding: 1.2em 1.2em;
 }
 
@@ -259,13 +271,13 @@
 
 .bio-contacts {
   max-width: 100%;
+  background-color: rgba(35, 35, 35, 0.80);
 }
 .bio-contacts, .bio-contacts ul, .bio-contacts li{
   list-style: none;
   display: inline-block;
   padding: 1em 1em;
   text-align: center;
-  background-color: #404040;
   color: white;
   text-decoration: none;
 }
