@@ -1,5 +1,5 @@
 
-@media only screen and (min-width: 557px) {
+@media only screen and (min-width: 510px) {
   /*page break for tablets*/
 
   .float-left{
@@ -14,41 +14,11 @@
     display: none;
   }
 
-  .main-nav ul{
-    display: flex;
-  }
   .main-nav ul li {
     display: inline;
   }
   .main-header{
     font-size:8vw;
-  }
-  
-  .brand-name{
-    width: 40%; 
-  }
-
-  .brand-name a{
-    font-size: 3em;
-  }
-
-  .game-form select{
-      font-size: 2vw;
-  }
-
-  .game-form label{
-    font-size: 2vw;
-  }
-
-  .stats-container {
-    flex-wrap: nowrap;
-  }
-
-  .stats-container div {
-    width: 25%;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    font-size: 1.2rem;
   }
 
 
@@ -58,10 +28,5 @@
   /*page break for desktops*/
   .option {
     width: 40%;
-    padding-top:20px;
-    padding-bottom:20px;
-    margin-top:5vh;
-    margin-bottom: 5vh;
   }
-
 }
