@@ -16,10 +16,6 @@ body{
   
 }
 
-label {
-  margin: 15px;
-}
-
 .about-team{
   display: none;
 }
@@ -50,6 +46,6 @@ label {
 }
 
 @font-face {
-  font-family: CFSamuraiBob.ttf;
+  font-family: CFSamuraiBob;
   src: url('/fonts/CFSamuraiBob.ttf');
 }
