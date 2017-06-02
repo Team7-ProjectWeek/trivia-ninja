@@ -18,9 +18,9 @@
     display: none;
   }
 
-  .main-nav ul li {
-    display: inline;
-  }
+.main-nav ul{
+  display: flex;
+}
   .main-header{
     font-size:5vw;
   }
