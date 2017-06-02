@@ -7,6 +7,7 @@ var app = app || {};
 
   freePlayController.freeQuestions = (ctx, next) => {
     $('#about').hide();
+    $('.trivia-complete-container').hide();
     $('#questionModal').show();
     // show free play button
     if (app.Sensei.paramsValidator(ctx.params.numOfQuestions, 'any')) {
