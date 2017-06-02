@@ -9,7 +9,6 @@ body{
   font-family: 'Raleway', sans-serif;
   background: url(/images/forest.jpg);
   /*background: linear-gradient(14deg, #185091, #be0000);*/
-
   -webkit-animation: AnimationName 25s ease infinite;
   -moz-animation: AnimationName 25s ease infinite;
   animation: AnimationName 25s ease infinite;
@@ -48,8 +47,8 @@ a, a:visited {
 }
 @keyframes AnimationName {
     0%{background-position:15% 0%}
-    50%{background-position:30% 100%}
-    100%{background-position:15% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:34% 0%}
 }
 
 @font-face {

@@ -119,9 +119,11 @@
 
 .question-header {
   text-align: center;
+  background-color: white;
+  color: black;
   font-size: 1.5em;
   padding: 4px;
-  padding-top:8vh;
+  margin-top: 5vh;
 }
 
 .option-container{
