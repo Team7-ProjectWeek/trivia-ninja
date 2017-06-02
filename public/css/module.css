@@ -273,6 +273,7 @@
   max-width: 100%;
   background-color: rgba(35, 35, 35, 0.80);
 }
+
 .bio-contacts, .bio-contacts ul, .bio-contacts li{
   list-style: none;
   display: inline-block;
@@ -280,6 +281,10 @@
   text-align: center;
   color: white;
   text-decoration: none;
+}
+
+.right{
+  float:right;
 }
 
 /*Trivia Complete Region*/
