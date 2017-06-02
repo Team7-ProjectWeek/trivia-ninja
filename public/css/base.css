@@ -13,14 +13,17 @@ body{
   -webkit-animation: AnimationName 17s ease infinite;
   -moz-animation: AnimationName 17s ease infinite;
   animation: AnimationName 17s ease infinite;
-  
+
 }
 
+img {
+  max-width: 100%;
+}
 label {
   margin: 15px;
 }
 
-.about-team{
+#about{
   display: none;
 }
 
@@ -38,7 +41,7 @@ label {
     50%{background-position:67% 100%}
     100%{background-position:34% 0%}
 }
-@keyframes AnimationName { 
+@keyframes AnimationName {
     0%{background-position:34% 0%}
     50%{background-position:67% 100%}
     100%{background-position:34% 0%}
