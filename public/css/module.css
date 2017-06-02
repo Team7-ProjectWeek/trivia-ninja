@@ -176,13 +176,30 @@
   align-items: center;
 }
 
-.about-team img {
-  width: 150px;
-  height: auto;
+.pic {
+  max-width: 15%;
+  margin: 0 2.5%;
 }
 
 .bio-text {
-  width: 80%;
+  display: inline-block;
+  max-width: 75%;
+  margin: 0 2%;
+}
+
+.bio{
+  display: inline-block;
+  width: 100%;
+}
+
+.bio-contacts {
+  max-width: 100%;
+}
+.bio-contacts, .bio-contacts ul, .bio-contacts li{
+  list-style: none;
+  display: inline-block;
+  padding: 1em, 1em;
+  text-align: center;
 }
 
 .nicu {

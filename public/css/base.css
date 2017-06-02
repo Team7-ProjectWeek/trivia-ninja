@@ -13,10 +13,17 @@ body{
   -webkit-animation: AnimationName 17s ease infinite;
   -moz-animation: AnimationName 17s ease infinite;
   animation: AnimationName 17s ease infinite;
-  
+
 }
 
-.about-team{
+img {
+  max-width: 100%;
+}
+label {
+  margin: 15px;
+}
+
+#about{
   display: none;
 }
 
@@ -44,6 +51,7 @@ body{
   font-family: lastninja;
   src: url('/fonts/lastninja.ttf');
 }
+
 
 @font-face {
   font-family: CFSamuraiBob;

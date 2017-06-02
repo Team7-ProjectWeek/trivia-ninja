@@ -18,7 +18,9 @@ var app = app || {};
     $('.question-button').on('click', function () {
       if (app.Question.selectedAnswer != ''){
         if ($('.question-button').text() === 'DONE') {
-          app.statsController.completeGame();
+          app.Sensei.evaluateAnswer();
+          window.setTimeout(function(){
+            app.statsController.completeGame();}, 650);
         } else {
           if (app.Question.currentQuestionIndex < app.Question.all.length - 2) {
             app.Sensei.evaluateAnswer();
@@ -30,8 +32,9 @@ var app = app || {};
             } else {
               app.Sensei.evaluateAnswer();
               app.Question.currentQuestionIndex += 1;
-              app.QuestionView.serveQuestion();
-              $('.question-button').html('DONE');
+              window.setTimeout(function(){
+                app.QuestionView.serveQuestion();
+                $('.question-button').html('DONE')}, 650);
             }
           }
         }
@@ -39,7 +42,7 @@ var app = app || {};
 
 
       $('.free-button').on('click', function () {
-        
+
         if (app.Question.selectedAnswer != ''){
           if (app.Question.currentQuestionIndex < app.Question.all.length - 1) {
             app.Sensei.evaluateAnswer();
