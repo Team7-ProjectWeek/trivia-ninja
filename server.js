@@ -26,7 +26,6 @@ app.get('/topScores', function(request,response){
 });
 
 app.post('/logScore', function(request, response) {
-  console.log(request.body);
 
   client.query(`INSERT INTO
                 scores(initials, game_id, total_score, total_time)
