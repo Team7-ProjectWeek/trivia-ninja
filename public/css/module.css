@@ -237,32 +237,42 @@
 
 /*Trivia Complete Region*/
 .trivia-complete-container{
-  display:none;
-  width:80%;
-  margin:auto;
-  background-color: grey;
+  margin: 2em 2em;
+  display: none;
+  max-width: 100%;
+  background-color: #404040;
   color:white;
   text-align:center;
   font-family: 'Raleway', sans-serif;
+  padding: 2.5% 2.5%;
+}
+
+.trivia-complete-container div{
+  flex-wrap: wrap;
 }
 
 .line-score-container{
-  display:flex;
+  display: flex;
   justify-content: space-around;
   align-items:center;
 }
 
 .line-score-container div{
- width: 30%;
+  margin: 1em 0.5em;
+  max-width: 100%;
+}
+
+.top10 {
+  margin: 1em 0;
 }
 
 .save-score-button {
-  width: 10%;
-  margin:auto;
-  margin-top:1%;
-  margin-bottom:1%;
-  background-color: pink;
+  max-width: 100%;
+  margin: 1.5em;
+  padding: 1em 1em;
+  background-color: #731E24;
   text-align: center;
+  font-size: 125%;
 }
 
 .final-header{
@@ -273,10 +283,16 @@
 .play-again-button{
   float:right;
   margin-top: 2%;
-  padding: 1%;
-  background-color: pink;
+  padding: 0.5em 1em;
+  background-color: #27ae60;
   font-size: 2em;
   font-weight: 700;
+  text-align: center;
+}
+
+.leaderboard-div{
+  margin: 2em 0;
+
 }
 
 
