@@ -47,9 +47,9 @@ a, a:visited {
     100%{background-position:34% 0%}
 }
 @keyframes AnimationName {
-    0%{background-position:34% 0%}
-    50%{background-position:67% 100%}
-    100%{background-position:34% 0%}
+    0%{background-position:15% 0%}
+    50%{background-position:30% 100%}
+    100%{background-position:15% 0%}
 }
 
 @font-face {
