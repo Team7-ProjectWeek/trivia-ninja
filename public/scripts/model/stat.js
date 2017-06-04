@@ -30,15 +30,15 @@ var app = app || {};
     stat.time += 1;
 
     switch (app.Question.all[app.Question.currentQuestionIndex].difficulty) {
-      case 'easy':
-        stat.score -= 1;
-        break;
-      case 'medium':
-        stat.score -= 2;
-        break;
-      case 'hard':
-        stat.score -= 3;
-        break;
+    case 'easy':
+      stat.score -= 1;
+      break;
+    case 'medium':
+      stat.score -= 2;
+      break;
+    case 'hard':
+      stat.score -= 3;
+      break;
     }
     $('.stats-timer').html(`Time: ${stat.time}`);
     $('.stats-score').html(`Score: ${stat.score}`);
@@ -52,15 +52,15 @@ var app = app || {};
   stat.statCalculator = function (difficulty, time) {
     stat.runningQuestionCount += 1;
     switch (difficulty) {
-      case 'easy':
-        difficultyValue = easy;
-        break;
-      case 'medium':
-        difficultyValue = medium;
-        break;
-      case 'hard':
-        difficultyValue = hard;
-        break;
+    case 'easy':
+      difficultyValue = easy;
+      break;
+    case 'medium':
+      difficultyValue = medium;
+      break;
+    case 'hard':
+      difficultyValue = hard;
+      break;
     }
     stat.runningTotalScore = stat.runningTotalScore + difficultyValue;
     stat.score = Math.floor(((stat.numberOfCorrect * (stat.runningTotalScore / stat.runningQuestionCount)) - time * ((stat.runningTotalScore / stat.runningQuestionCount) / 100)));

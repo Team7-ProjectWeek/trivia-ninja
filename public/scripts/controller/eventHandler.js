@@ -3,7 +3,7 @@
 $(document).ready(function () {
   $('.save-score-button').on('click', function () {
     $.post('/logScore', {
-      initials: $('#initials')[0].value || "MDN",
+      initials: $('#initials')[0].value || 'MDN',
       gameId: 'single',
       totalScore: app.stat.score,
       totalTime: app.stat.time

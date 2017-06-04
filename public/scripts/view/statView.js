@@ -13,7 +13,7 @@ var app = app || {};
     app.statsController.populateTopScores();
     $('.trivia-complete-container').fadeIn(100);
   }
-
+  // updates stats after each question answered
   statView.updateStats = () => {
     $('.stats-correct-answers').html(`CORRECT ANSWERS: ${app.stat.numberOfCorrect}`);
     if (!app.Question.isFreePlay) {

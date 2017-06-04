@@ -11,8 +11,7 @@ var app = app || {};
     $('#questionModal').hide();
     $('.trivia-complete-container').hide();
     $('#about').fadeIn(800);
-    
-    if($('.ham-menu').css('display') === 'block'){
+    if ($('.ham-menu').css('display') === 'block') {
       $('.mobile-menu').toggleClass('mobile-menu-shown');
     }
   }
