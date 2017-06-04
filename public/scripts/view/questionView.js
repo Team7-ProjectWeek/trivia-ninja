@@ -60,7 +60,7 @@ var app = app || {};
       }
     });
 
-    $('.option').on('click', function (event) {
+    $('.option').on('click', function () {
       $(this).siblings().removeClass('question-selected');
       $(this).toggleClass('question-selected');
       app.Question.selectedAnswer = $(this).text();

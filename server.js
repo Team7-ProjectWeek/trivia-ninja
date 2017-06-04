@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;
  // 'postgres://localhost:5432'
-const conString = process.env.DATABASE_URL || 'postgres://postgres:1234@localhost:5432/kilovolt';
+const conString = process.env.DATABASE_URL || 'postgres://postgres:passwordhere@localhost:5432/kilovolt';
 
 const app = express();
 const client = new pg.Client(conString);

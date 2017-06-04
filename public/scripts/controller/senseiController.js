@@ -67,8 +67,8 @@ var app = app || {};
     event.preventDefault();
     Sensei.go();
   })
-
-  Sensei.getQuestions = (ctx, next) => {
+  //  gets questions for normal play mode
+  Sensei.getQuestions = (ctx) => {
     if (app.Sensei.paramsValidator(ctx.params.numOfQuestions, ctx.params.difficulty)) {
       let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&difficulty=${ctx.params.difficulty}&token=${app.user.token.token}`
       app.Question.isFreePlay = false;
@@ -80,8 +80,8 @@ var app = app || {};
       });
     }
   }
-
-  Sensei.freeQuestions = (ctx, next) => {
+  //  gets questions for free play mode
+  Sensei.freeQuestions = (ctx) => {
     let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
     app.Question.currentQuestionIndex = 0;
     $.get(url).then((data) => {

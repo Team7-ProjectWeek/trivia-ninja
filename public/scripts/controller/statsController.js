@@ -5,8 +5,7 @@ var app = app || {};
 (function (module) {
   const statsController = {};
 
-  // get number of questions and answers.
-
+  // complete game on done button press
   statsController.completeGame = function () {
     app.stat.stopTime();
     app.statView.complete();

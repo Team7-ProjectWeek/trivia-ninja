@@ -5,14 +5,14 @@ var app = app || {};
 (function (module) {
   const freePlayController = {};
 
-  freePlayController.freeQuestions = (ctx, next) => {
+  freePlayController.freeQuestions = (ctx) => {
     $('#about').hide();
     $('.trivia-complete-container').hide();
     $('#questionModal').show();
-    if($('.ham-menu').css('display') === 'block'){
+    if ($('.ham-menu').css('display') === 'block') {
       $('.mobile-menu').toggleClass('mobile-menu-shown');
     }
-    // show free play button
+
     if (app.Sensei.paramsValidator(ctx.params.numOfQuestions, 'any')) {
       let url = `https://opentdb.com/api.php?amount=${ctx.params.numOfQuestions}&token=${app.user.token.token}`
       app.Question.currentQuestionIndex = 0;
@@ -27,8 +27,8 @@ var app = app || {};
       });
     }
   }
-
-  freePlayController.continueFreeQuestions = (ctx, next) => {
+  // continues free play by loading 50 new questions
+  freePlayController.continueFreeQuestions = () => {
     let url = `https://opentdb.com/api.php?amount=50&token=${app.user.token.token}`
     app.Question.currentQuestionIndex = 0;
     $.get(url).then((data) => {
