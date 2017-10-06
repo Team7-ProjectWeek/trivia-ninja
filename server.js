@@ -1,8 +1,10 @@
 'use strict';
 
+require('newrelic');
 const express = require('express');
 const pg = require('pg');
 const bodyParser = require('body-parser');
+
 
 const PORT = process.env.PORT || 3000;
  // 'postgres://localhost:5432'
